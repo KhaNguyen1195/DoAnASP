@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <!-- for-mobile-apps -->
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/zoomslider.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/style.css" />
+    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="~/Content/js/modernizr-2.6.2.min.js"></script>
+    <!--/web-fonts-->
+    <link href='//fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:400,300,300italic,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!--//web-fonts-->
+</head>
+<body>
+    <!--/main-header-->
+    <div class="top-main" id="home">
+        <div class="header-top">
+            <div class="w3l_header_left">
+                <ul>
+                    <li><span class="fa fa-envelope" aria-hidden="true"></span> <a href="mailto:Khanguyen129@gmail.com">khanguyen129@gmail.com</a></li>
+                    <li><span class="fa fa-phone-square" aria-hidden="true"></span> (010) 221 918 811</li>
+                </ul>
+            </div>
+            <div class="w3l_header_right">
+                <ul class="top-links">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container">
+                <nav class="navbar navbar-default">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="logo">
+                            <h1><a class="navbar-brand" href="index.html"><span class="one">N</span>guyên<span class="one">P</span>hi</a></h1>
+                        </div>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                        <nav class="cl-effect-1" id="cl-effect-1">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a class="scroll" href="index.html">Trang chủ</a></li>
+                                <li><a href="#danhmuc" class="scroll hvr-bounce-to-bottom">Danh mục</a></li>
+                                <li><a href="#dangky" class="scroll hvr-bounce-to-bottom">Đăng ký</a></li>
+                                <li><a href="#projects" class="scroll hvr-bounce-to-bottom">Đăng nhập</a></li>
+                                <li><a href="#contact" class="scroll hvr-bounce-to-bottom">Đăng tin</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </nav>
+                <div class="w3ls_search">
+                    <div class="cd-main-header">
+                        <ul class="cd-header-buttons">
+                            <li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
+                        </ul> <!-- cd-header-buttons -->
+                    </div>
+                    <div id="cd-search" class="cd-search">
+                        <form action="#" method="post">
+                            <input name="Search" type="search" placeholder="Search...">
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    @RenderBody()
+    <div class="contact-w3ls" id="contact">
+        <div class="container">
+            <h2>Sign up for our <span>Newsletter</span></h2>
+            <p class="para">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus
+                tristique bibendum. Donec rutrum sed sem quis venenatis.
+            </p>
+            <div class="footer-contact">
+                <form action="#" method="post">
+                    <input type="text" name="Email" placeholder="Enter your email to update" required="">
+                    <input type="submit" value="Subscribe">
+                </form>
+            </div>
+            <div class="footer-grids w3-agileits">
+                <div class="col-md-4 footer-grid">
+                    <p>
+                        <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> General Pvt 66, Dong Da
+                        Hanoi, Vietnam.
+                    </p>
+                    <p><a href="mailto:contact@example.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> contact@example.com</a></p>
+                    <p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>+0123 456 686</p>
+                </div>
+                <div class="col-md-2 footer-grid">
+                    <ul>
+
+                        <li><a class="scroll" href="#home">Home</a></li>
+                        <li><a class="scroll" href="#projects">Projects</a></li>
+                        <li><a class="scroll" href="#team">Team</a></li>
+                        <li><a class="scroll" href="#property">Properties</a></li>
+                        <li><a class="scroll" href="#gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-grid">
+                    <div class="footer-grid1">
+                        <div class="footer-grid1-left">
+                            <a href="#"><img src="~/Content/images/v8.jpg" alt=" " class="img-responsive"></a>
+                        </div>
+                        <div class="footer-grid1-right">
+                            <a href="#">eveniet ut molesti</a>
+
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="footer-grid1">
+                        <div class="footer-grid1-left">
+                            <a href="#"><img src="~/Content/images/v7.jpg" alt=" " class="img-responsive"></a>
+                        </div>
+                        <div class="footer-grid1-right">
+                            <a href="#">earum rerum tenet</a>
+
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="footer-grid1">
+                        <div class="footer-grid1-left">
+                            <a href="#"><img src="~/Content/images/v1.jpg" alt=" " class="img-responsive"></a>
+                        </div>
+                        <div class="footer-grid1-right">
+                            <a href="#">maiores alias cons</a>
+
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+                <div class="col-md-3 footer-grid">
+                    <div class="footer-grid-instagram">
+                        <a href="#"><img src="~/Content/images/v5.jpg" alt=" " class="img-responsive"></a>
+                    </div>
+                    <div class="footer-grid-instagram">
+                        <a href="#"><img src="~/Content/images/v3.jpg" alt=" " class="img-responsive"></a>
+                    </div>
+                    <div class="footer-grid-instagram">
+                        <a href="#"><img src="images/v2.jpg" alt=" " class="img-responsive"></a>
+                    </div>
+                    <div class="footer-grid-instagram">
+                        <a href="#"><img src="~/Content/images/v4.jpg" alt=" " class="img-responsive"></a>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <h3 class="text-center follow">Follow <span>Us</span></h3>
+            <ul class="social-icons1 agileinfo">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            </ul>
+            <div class="w3agile_footer_copy">
+                <p>© 2017 Fetch Villa. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+            </div>
+        </div>
+
+    </div>
+    <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    <script src="~/Content/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/jquery.zoomslider.min.js"></script>
+    <!-- search-jQuery -->
+    <script src="~/Content/js/main.js"></script>
+    <!-- //search-jQuery -->
+    <script type="text/javascript">
+        $(window).load(function () {
+            $("#flexiselDemo1").flexisel({
+                visibleItems: 3,
+                animationSpeed: 1000,
+                autoPlay: true,
+                autoPlaySpeed: 3000,
+                pauseOnHover: true,
+                enableResponsiveBreakpoints: true,
+                responsiveBreakpoints: {
+                    portrait: {
+                        changePoint: 480,
+                        visibleItems: 1
+                    },
+                    landscape: {
+                        changePoint: 640,
+                        visibleItems: 2
+                    },
+                    tablet: {
+                        changePoint: 768,
+                        visibleItems: 2
+                    }
+                }
+            });
+
+        });
+    </script>
+    <script type="text/javascript" src="~/Content/js/jquery.flexisel.js"></script>
+    <!-- Horizontal-Tabs-JavaScript -->
+    <script src="~/Content/js/easyResponsiveTabs.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default',
+                width: 'auto',
+                fit: true,
+            });
+        });
+    </script>
+    <!-- Horizontal-Tabs-JavaScript -->
+    <script src="~/Content/js/jquery.picEyes.js"></script>
+    <script>
+        $(function () {
+            //picturesEyes($('.demo li'));
+            $('.demo li').picEyes();
+        });
+    </script>
+    <!--start-smooth-scrolling-->
+    <!--/script-->
+    <script type="text/javascript" src="~/Content/js/move-top.js"></script>
+    <script type="text/javascript" src="~/Content/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 900);
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+            };
+            */
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>
+    <!--end-smooth-scrolling-->
+    <script src="~/Content/js/bootstrap.min.js"></script>
+
+</body>
+</html>
