@@ -41,7 +41,7 @@
             </div>
 
             <!--logo start-->
-            <a href="index1.html" class="logo">Quản trị <span class="lite">Hệ thống</span></a>
+            <a href="~/Admin/Home/Index" class="logo">Quản trị <span class="lite">Hệ thống</span></a>
             <!--logo end-->
 
 
@@ -52,13 +52,13 @@
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="~/Areas/Admin/Contentimg/avatar1_small.jpg">
+                                <img alt="" src="~/Areas/Admin/Content/img/avatar1_small.jpg">
                             </span>
                             <span class="username">Jenifer Smith</span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
-                            <div class="log-arrow-up"></div>
+                            @*<div class="log-arrow-up"></div>*@
                             <li class="eborder-top">
                                 <a href="#"><i class="icon_profile"></i> My Profile</a>
                             </li>
@@ -100,13 +100,10 @@
                         </a>
                     </li>
                     <li class="sub-menu">
-                        <a href="javascript:;" class="">
-                            <i class="fa fa-users"></i>
+                        <a href="~/Admin/User" class="">
+                            <i class="fa fa-list-alt"></i>
                             <span>Quản lý người dùng</span>
                         </a>
-                        <ul class="sub">
-                            <li><a class="" href="~/Admin/Users/Index">Quản lý người dùng</a></li>
-                        </ul>
                     </li>
                     <li class="sub-menu">
                         <a href="~/Admin/LoaiDanhMuc/Index" class="">
@@ -160,6 +157,7 @@
     <!-- container section start -->
     <!-- javascripts -->
     <script src="~/Areas/Admin/Content/js/jquery.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     <!-- bootstrap -->
     <script src="~/Areas/Admin/Content/js/bootstrap.min.js"></script>
     <!-- nice scroll -->
