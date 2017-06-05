@@ -27,7 +27,7 @@ namespace Model.Dao
             try
             {
                 var user = db.Users.Find(entity.ID);
-                if (string.IsNullOrEmpty(entity.Password))
+                if (!string.IsNullOrEmpty(entity.Password))
                 {
                     user.Password = entity.Password;
                 }

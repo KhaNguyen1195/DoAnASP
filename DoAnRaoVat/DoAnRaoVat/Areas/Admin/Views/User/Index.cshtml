@@ -41,7 +41,7 @@
                 <table class="table table-bordered">
                     <thead style="font-size:18px;">
                         <tr>
-                            <th class="kc">#</th>
+                            <th class="kc">STT</th>
                             <th class="kc">Tên tài khoản</th>
                             <th class="kc">Họ và tên</th>
                             <th class="kc">Địa chỉ</th>
@@ -65,7 +65,7 @@
                                         <a href="/Admin/User/Edit/@item.ID" class=" btn btn-info btn-sm tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Chỉnh sửa">
                                             <i class="fa fa-pencil"></i>
                                         </a>
-                                        @Ajax.ActionLink("Xóa", "Delete", new { @id = item.ID }, new AjaxOptions
+                                        @Ajax.ActionLink("Xóa", "Delete", new { @id = item.ID}, new AjaxOptions
                                    {
                                        Confirm = "Bạn có muốn xóa không?",
                                        OnComplete = "$('#row_" + @item.ID + "').remove()",
