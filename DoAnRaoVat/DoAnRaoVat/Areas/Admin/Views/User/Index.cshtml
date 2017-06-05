@@ -16,17 +16,34 @@
             </ol>
         </div>
     </div>
-    @using (Html.BeginForm("Index", "User", FormMethod.Get))
-    {
-        <div class="col-lg-12">
-            <div class="col-md-4">
-                <input type="text" value="@ViewBag.SearchString" name="searchString" />
+    @*@using (Html.BeginForm("Index", "User", FormMethod.Get))
+        {
+            <div class="col-lg-12">
+                <div class="col-md-4">
+                    <input type="text" value="@ViewBag.SearchString" name="searchString" />
+                </div>
+                <div class="col-md-4">
+                    <button type="submit">Tìm kiếm</button>
+                </div>
             </div>
-            <div class="col-md-4">
-                <button type="submit">Tìm kiếm</button>
+        }*@
+
+    <div class="form">
+        @using (Html.BeginForm("Index", "User", FormMethod.Get, new { @class = "form-group form-validate" }))
+            {
+            <div class="form-group col-lg-12">
+                <div class="col-lg-4">
+                    <input type="text" value="@ViewBag.SearchString" name="searchString" class="form-control" />
+                </div>
+                <div class="col-lg-8">
+                    <button class="btn btn-warning" type="submit" name="search">Tìm kiếm</button>
+                </div>
+
             </div>
-        </div>
-    }
+        }
+    </div>
+
+
 
 </section>
 <div class="row">
@@ -54,7 +71,7 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                            
+
                             <tr id="row_@item.ID">
                                 <td class="kc">@(stt++)</td>
                                 <td class="kc">@item.Username</td>
