@@ -51,5 +51,11 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
             }
             return View("Index");
         }
+        //Dang xuat he thong 
+        public ActionResult Logout()
+        {
+            Session["Phone"] = null;
+            return new RedirectResult("/Admin/Login/Index");
+        }
     }
 }
