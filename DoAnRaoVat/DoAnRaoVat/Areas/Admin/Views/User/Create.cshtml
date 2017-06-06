@@ -22,14 +22,14 @@
                 <div class="panel-body">
                     <div class="form">
                         <form class="form-group form-validate" id="register-form">
-                            @using (Html.BeginForm("Create", "User", FormMethod.Post, new { @class = "form-group form-validate" }))
+                            @using (Html.BeginForm("Create", "User", FormMethod.Post, new { @class = "form-group" }))
                             {
                                 @Html.AntiForgeryToken()
 
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                                 <div class="form-group col-lg-6">
-                                    @Html.LabelFor(model => model.Username,  new { @class = "control-label col-lg-4" })
+                                    @Html.LabelFor(model => model.Username, new { @class = "control-label col-lg-4" })
                                     <div class="col-lg-8">
                                         @Html.TextBoxFor(model => model.Username, new { @class = "form-control", @autofocus = "autofocus", @placeholder = "Tên tài khoản" })
                                         @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
@@ -39,7 +39,7 @@
                                 <div class="form-group col-lg-6">
                                     @Html.LabelFor(model => model.Password, new { @class = "control-label col-lg-4" })
                                     <div class="col-lg-8">
-                                        @Html.PasswordFor(model => model.Password,new { @class = "form-control" })
+                                        @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
                                         @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -47,15 +47,15 @@
                                 <div class="form-group col-lg-6">
                                     @Html.LabelFor(model => model.Name, new { @class = "control-label col-lg-4" })
                                     <div class="col-lg-8">
-                                        @Html.TextBoxFor(model => model.Name,new { @class = "form-control" })
+                                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
                                         @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
 
                                 <div class="form-group col-lg-6">
-                                    @Html.LabelFor(model => model.Address,  new { @class = "control-label col-lg-4" })
+                                    @Html.LabelFor(model => model.Address, new { @class = "control-label col-lg-4" })
                                     <div class="col-lg-8">
-                                        @Html.TextBoxFor(model => model.Address,new { @class = "form-control" })
+                                        @Html.TextBoxFor(model => model.Address, new { @class = "form-control" })
                                         @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -63,22 +63,22 @@
                                 <div class="form-group col-lg-6">
                                     @Html.LabelFor(model => model.Email, new { @class = "control-label col-lg-4" })
                                     <div class="col-lg-8">
-                                        @Html.TextBoxFor(model => model.Email,new { @class = "form-control" })
+                                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
                                         @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
 
                                 <div class="form-group col-lg-6">
-                                    @Html.LabelFor(model => model.Phone,  new { @class = "control-label col-lg-4" })
+                                    @Html.LabelFor(model => model.Phone, new { @class = "control-label col-lg-4" })
                                     <div class="col-lg-8">
-                                        @Html.TextBoxFor(model => model.Phone,new { @class = "form-control" })
+                                        @Html.TextBoxFor(model => model.Phone, new { @class = "form-control" })
                                         @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
                                 <div class="form-group col-lg-6">
                                     @Html.LabelFor(model => model.Status, new { @class = "control-label col-lg-4 col-sm-3" })
                                     <div class="col-lg-8 col-sm-9">
-                                        @Html.CheckBoxFor(model => model.Status,new { @class = "checkbox form-control" , @style="width:20px;"})
+                                        @Html.CheckBoxFor(model => model.Status, new { @class = "checkbox form-control", @style = "width:20px;" })
                                         @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -86,7 +86,7 @@
                                 <div class="form-group">
                                     <div class="col-lg-offset-2 col-lg-10">
                                         <input type="submit" value="Tạo mới" class="btn btn-primary" />
-                                        @Html.ActionLink("Back", "Index", new {@class="btn btn-success" })
+                                        @Html.ActionLink("Back", "Index")
                                     </div>
                                 </div>
                             }
@@ -98,6 +98,3 @@
         </div>
     </div>
 </section>
-<div>
-    
-</div>
