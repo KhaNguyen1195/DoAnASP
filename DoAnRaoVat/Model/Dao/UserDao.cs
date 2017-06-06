@@ -51,7 +51,7 @@ namespace Model.Dao
             IQueryable<User> model = db.Users;
             if(!string.IsNullOrEmpty(searchString))
             {
-                model = model.Where(x => x.Username.Contains(searchString) || x.Phone.Contains(searchString) || x.Name.Contains(searchString));
+                model = model.Where(x => x.Username.Contains(searchString) || x.Phone.Contains(searchString));
             }
             return model.OrderByDescending(x => x.CreatedDate).ToPagedList(page, pageSize);
         }
