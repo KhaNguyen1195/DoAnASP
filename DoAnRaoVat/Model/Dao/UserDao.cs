@@ -39,7 +39,7 @@ namespace Model.Dao
                 db.SaveChanges();
                 return true;
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 return false;
             }
@@ -51,7 +51,7 @@ namespace Model.Dao
             IQueryable<User> model = db.Users;
             if(!string.IsNullOrEmpty(searchString))
             {
-                model = model.Where(x => x.Username.Contains(searchString) || x.Phone.Contains(searchString));
+                model = model.Where(x => x.Username.Contains(searchString) || x.Phone.Contains(searchString) || x.Name.Contains(searchString));
             }
             return model.OrderByDescending(x => x.CreatedDate).ToPagedList(page, pageSize);
         }

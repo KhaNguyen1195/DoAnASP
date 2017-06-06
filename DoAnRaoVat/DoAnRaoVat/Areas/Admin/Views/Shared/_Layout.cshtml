@@ -1,9 +1,6 @@
-﻿@*@{
-        if(Session["email"] == null)
-        {
-            Response.Redirect("~/Admin/Home/Login");
-        }
-    }*@
+﻿@model PagedList.IPagedList<Model.EF.User>
+@using PagedList.Mvc;
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,15 +45,14 @@
             <div class="top-nav notification-row">
                 <!-- notificatoin dropdown start-->
                 <ul class="nav pull-right top-menu">
-
                     <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="profile-ava">
-                                <img alt="" src="~/Areas/Admin/Content/img/avatar1_small.jpg">
-                            </span>
-                            <span class="username">Jenifer Smith</span>
-                            <b class="caret"></b>
-                        </a>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <span class="profile-ava">
+                                    <img alt="" src="~/Areas/Admin/Content/img/avatar1_small.jpg">
+                                </span>
+                                <span class="username"></span>
+                                <b class="caret"></b>
+                            </a>
                         <ul class="dropdown-menu extended logout">
                             @*<div class="log-arrow-up"></div>*@
                             <li class="eborder-top">
