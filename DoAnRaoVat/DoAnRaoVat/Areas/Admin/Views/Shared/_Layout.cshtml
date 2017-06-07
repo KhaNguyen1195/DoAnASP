@@ -40,7 +40,7 @@
             </div>
 
             <!--logo start-->
-            <a href="/Admin/Home/Index" class="logo">Quản trị <span class="lite">Hệ thống</span></a>
+            <a href="@Url.Action("Index","Home")" class="logo">Quản trị <span class="lite">Hệ thống</span></a>
             <!--logo end-->
 
             <div class="top-nav notification-row">
@@ -94,7 +94,7 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu">
                     <li class="active">
-                        <a class="" href="/Admin/Home/Index">
+                        <a class="" href="@Url.Action("Index","Home")">
                             <i class="icon_house_alt"></i>
                             <span>Trang chủ</span>
                         </a>
@@ -123,7 +123,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="" href="/Admin/User/Index">
+                        <a class="" href="@Url.Action("Index","User")">
                             <i class="icon_group"></i>
                             <span>Quản lý người dùng</span>
                         </a>
@@ -132,7 +132,6 @@
                         <a class="" href="chart-chartjs.html">
                             <i class="icon_piechart"></i>
                             <span>Charts</span>
-
                         </a>
 
                     </li>
@@ -168,9 +167,7 @@
         </aside>
         <!--sidebar end-->
         <!--main content start-->
-        <section id="main-content">
             @RenderBody()
-        </section>
         <!--main content end-->
     </section>
     <!-- container section start -->
