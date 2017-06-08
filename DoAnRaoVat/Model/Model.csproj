@@ -65,6 +65,7 @@
     <Compile Include="EF\News.cs" />
     <Compile Include="EF\ProductCategory.cs" />
     <Compile Include="EF\User.cs" />
+    <Compile Include="EF\UserValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

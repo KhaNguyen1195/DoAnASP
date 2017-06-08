@@ -1,0 +1,111 @@
+﻿@model DoAnRaoVat.Models.RegisterModels
+@using BotDetect.Web.Mvc;
+<link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl"
+      rel="stylesheet" type="text/css" />
+
+@{ MvcCaptcha registerCaptcha = new MvcCaptcha("registerCaptcha"); }
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Đăng ký thành viên</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- css files -->>
+    <link href="~/Content/css/register.css" rel='stylesheet' type='text/css' media="all" />
+
+    <!-- /css files -->
+    <!-- font files -->
+    <link href='//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600italic,600,700,700italic' rel='stylesheet' type='text/css'><!-- /font files -->
+</head>
+<body>
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <h1 class="header-agileits w3 w3l agile-info">Đăng ký thành viên</h1>
+        <div class="content-w3ls">
+            <div class="form-w3layouts">
+                <form>
+                        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+                        @if (ViewBag.Success != null)
+                        {
+                            <div class="alert alert-info">@ViewBag.Success</div>
+                        }
+                    
+                    <div class="form-control">
+                        @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "header"})
+                        @Html.TextBoxFor(model => model.Username, new { @class = "text-form", @placeholder = "Nhập vào tên đăng nhập" })
+                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="form-control">
+                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "header" })
+                        @Html.PasswordFor(model => model.Password, new { @class = "text-form", @placeholder = "Nhập mật khẩu" })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="form-control">
+                        @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "header" })
+                        @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "text-form", @placeholder = "Nhập lại mật khẩu" })
+                        @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="form-control">
+                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "header" })
+                        @Html.TextBoxFor(model => model.Name, new { @class = "text-form", @placeholder = "Nhập vào Họ và tên" })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="form-control">
+                        @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "header" })
+                        @Html.TextBoxFor(model => model.Address, new { @class = "text-form", @placeholder = "Nhập vào địa chỉ" })
+                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="form-control">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "header" })
+                        @Html.TextBoxFor(model => model.Email, new { @class = "text-form", @placeholder = "Mail@example.com" })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="form-control">
+                        @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "header" })
+                        @Html.TextBoxFor(model => model.Phone, new { @class = "text-form", @placeholder = "Nhập số điện thoại" })
+                        @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                        <div class="clear"></div>
+                    </div>
+                    <div class="agile-w3ls">
+                        <p class="be-wls">Nhập vào mã xác nhận</p>
+                        @Html.Captcha(registerCaptcha)
+                        @Html.TextBox("CaptchaCode")
+                        
+                        
+                    </div>
+                    <br />
+                    
+                    <div class="form-control">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Đăng ký" class="register"/>
+                            <a href="@Url.Action("Index","Home")" type="button" style="color:white;">Quay lại</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    }
+</body>
+
+</html>

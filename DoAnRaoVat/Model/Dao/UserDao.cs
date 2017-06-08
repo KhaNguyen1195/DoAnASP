@@ -31,6 +31,7 @@ namespace Model.Dao
                 {
                     user.Password = entity.Password;
                 }
+                user.Username = entity.Username;
                 user.Name = entity.Name;
                 user.Address = entity.Address;
                 user.Email = entity.Email;
@@ -103,6 +104,16 @@ namespace Model.Dao
             db.Users.Remove(user);
             db.SaveChanges();
             return true;
+        }
+
+        //Đăng ký
+        public bool CheckUserName(string userName)
+        {
+            return db.Users.Count(u => u.Username == userName) > 0;
+        }
+        public bool CheckPhone(string phone)
+        {
+            return db.Users.Count(u => u.Phone == phone) > 0;
         }
     }
 }
