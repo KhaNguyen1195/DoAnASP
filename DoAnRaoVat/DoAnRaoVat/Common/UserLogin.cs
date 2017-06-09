@@ -10,5 +10,6 @@ namespace DoAnRaoVat
     {
         public long UserID { set; get; }
         public string Phone { set; get; }
+        public string UserName { get; set; }
     }
 }

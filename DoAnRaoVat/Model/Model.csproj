@@ -60,12 +60,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dao\UserDao.cs" />
+    <Compile Include="EF\Category.cs" />
+    <Compile Include="EF\City.cs" />
     <Compile Include="EF\DoAnASPDBContext.cs" />
     <Compile Include="EF\FeedBack.cs" />
     <Compile Include="EF\News.cs" />
     <Compile Include="EF\ProductCategory.cs" />
     <Compile Include="EF\User.cs" />
-    <Compile Include="EF\UserValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

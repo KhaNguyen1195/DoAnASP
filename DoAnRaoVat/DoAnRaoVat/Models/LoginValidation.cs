@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace DoAnRaoVat.Areas.Admin.Models
+namespace DoAnRaoVat.Models
 {
-    public class LoginModel
+    public class LoginValidation
     {
         [Required(ErrorMessage = "Vui lòng nhập tên tài khoản")]
         public string UserName { set; get; }

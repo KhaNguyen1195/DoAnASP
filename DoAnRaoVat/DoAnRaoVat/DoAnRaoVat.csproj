@@ -226,6 +226,7 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\LoginModels.cs" />
+    <Compile Include="Models\LoginValidation.cs" />
     <Compile Include="Models\RegisterValidation.cs" />
     <Compile Include="Models\RegisterModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -307,6 +308,7 @@
     <Content Include="Areas\Admin\Content\js\scripts.js" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\login.css" />
     <Content Include="Content\css\register.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\zoomslider.css" />
@@ -314,10 +316,12 @@
     <Content Include="Content\images\2.jpg" />
     <Content Include="Content\images\3.jpg" />
     <Content Include="Content\images\4.jpg" />
+    <Content Include="Content\images\b2.jpg" />
     <Content Include="Content\images\banner.jpg" />
     <Content Include="Content\images\capcha.jpg" />
     <Content Include="Content\images\close.png" />
     <Content Include="Content\images\dots.png" />
+    <Content Include="Content\images\e-mail.png" />
     <Content Include="Content\images\img-sp.png" />
     <Content Include="Content\images\left.png" />
     <Content Include="Content\images\left1.png" />
@@ -325,6 +329,7 @@
     <Content Include="Content\images\logo2.png" />
     <Content Include="Content\images\move-top.png" />
     <Content Include="Content\images\next.png" />
+    <Content Include="Content\images\password.png" />
     <Content Include="Content\images\pre.png" />
     <Content Include="Content\images\right.png" />
     <Content Include="Content\images\right1.png" />
@@ -333,6 +338,8 @@
     <Content Include="Content\images\t2.jpg" />
     <Content Include="Content\images\t3.jpg" />
     <Content Include="Content\images\t4.jpg" />
+    <Content Include="Content\images\tick.png" />
+    <Content Include="Content\images\user.png" />
     <Content Include="Content\images\v1.jpg" />
     <Content Include="Content\images\v2.jpg" />
     <Content Include="Content\images\v3.jpg" />
@@ -346,6 +353,7 @@
     <Content Include="Content\js\easing.js" />
     <Content Include="Content\js\easyResponsiveTabs.js" />
     <Content Include="Content\js\jquery-1.11.1.min.js" />
+    <Content Include="Content\js\jquery-2.1.4.min.js" />
     <Content Include="Content\js\jquery.flexisel.js" />
     <Content Include="Content\js\jquery.picEyes.js" />
     <Content Include="Content\js\jquery.zoomslider.min.js" />
@@ -410,6 +418,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

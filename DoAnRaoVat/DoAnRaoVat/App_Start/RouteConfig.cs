@@ -21,6 +21,12 @@ namespace DoAnRaoVat
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
                 namespaces: new string[] { "DoAnRaoVat.Controllers" }
             );
+            routes.MapRoute(
+                name: "Login",
+                url: "DangNhap",
+                defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional },
+                namespaces: new string[] { "DoAnRaoVat.Controllers" }
+            );
         }
     }
 }

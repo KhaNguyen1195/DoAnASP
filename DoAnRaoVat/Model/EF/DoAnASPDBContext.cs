@@ -12,6 +12,8 @@ namespace Model.EF
         {
         }
 
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<FeedBack> FeedBacks { get; set; }
         public virtual DbSet<News> News { get; set; }
         public virtual DbSet<ProductCategory> ProductCategories { get; set; }

@@ -6,12 +6,12 @@ using System.Web;
 
 namespace DoAnRaoVat.Models
 {
+    [MetadataType(typeof(LoginValidation))]
     public class LoginModels
     {
-        [Required(ErrorMessage = "Vui lòng nhập số điện thoại")]
-        public string Phone { set; get; }
-
-        [Required(ErrorMessage = "Vui lòng nhập mật khẩu")]
+      
+        public string UserName { set; get; }
+        
         public string Password { set; get; }
 
         public bool RemmemberMe { set; get; }

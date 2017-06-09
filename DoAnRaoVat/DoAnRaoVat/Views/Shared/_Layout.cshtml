@@ -61,26 +61,41 @@
                             <ul class="nav navbar-nav">
                                 <li class="active"><a class="scroll" href="index.html">Trang chủ</a></li>
                                 <li><a href="#danhmuc" class="scroll hvr-bounce-to-bottom">Danh mục</a></li>
-                                <li><a href="@Url.Action("Register", "Account")">Đăng ký</a></li>
-                                <li><a href="#projects">Đăng nhập</a></li>
                                 <li><a href="#contact">Đăng tin</a></li>
+                                <li><a href="@Url.Action("Register", "Account")">Đăng ký</a></li>
+                                @{
+                                    var session = (UserLogin)Session[DoAnRaoVat.Common.CommonConstants.USER_SESSION];
+                                }
+                                @if (session != null)
+                                {
+                                    <li><a><span class="glyphicon glyphicon-user"></span> @session.UserName</a></li>
+                                    <li>@Html.ActionLink("Thoát", "Logout", "Account")
+                                    @*<a href=""><span class="glyphicon glyphicon-log-out"></span> Thoát</a>*@</li>
+                                }
+                                else
+                                {
+                                    <li><a href="@Url.Action("Login", "Account")">Đăng nhập</a></li>
+                                }
+                                
+
+                                
                             </ul>
                         </nav>
                     </div>
                     <!-- /.navbar-collapse -->
                 </nav>
-                <div class="w3ls_search">
+                @*<div class="w3ls_search">
                     <div class="cd-main-header">
                         <ul class="cd-header-buttons">
                             <li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
-                        </ul> <!-- cd-header-buttons -->
+                        </ul> 
                     </div>
                     <div id="cd-search" class="cd-search">
                         <form action="#" method="post">
                             <input name="Search" type="search" placeholder="Search...">
                         </form>
                     </div>
-                </div>
+                </div>*@
 
             </div>
         </div>

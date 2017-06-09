@@ -1,0 +1,70 @@
+﻿@model DoAnRaoVat.Models.LoginModels
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <title>ĐĂNG NHẬP TRANG CHỦ</title>
+
+    <!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //Meta-Tags -->
+
+    <link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+
+    <!-- Style -->
+    <link rel="stylesheet" href="~/Content/css/login.css" type="text/css" media="all">
+
+    <!-- Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+    <!-- //Fonts -->
+
+</head>
+<body>
+    @using (Html.BeginForm()) 
+    {
+        @Html.AntiForgeryToken()
+
+        <h1>ĐĂNG NHẬP</h1>
+
+        <div class="w3layoutscontaineragileits">
+            <h2>Đăng nhập tại đây</h2>
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    @Html.TextBoxFor(model => model.UserName, new { @placeholder = "TÊN TÀI KHOẢN" })
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+
+
+                    @Html.PasswordFor(model => model.Password, new { @placeholder = "MẬT KHẨU" })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+            <ul class="agileinfotickwthree">
+                <li>
+                    <label id="brand1">
+                        @Html.EditorFor(model => model.RemmemberMe)
+                        @Html.ValidationMessageFor(model => model.RemmemberMe, "", new { @class = "text-danger" })
+                        <label for="brand1"><span></span>Remember me</label>
+                    </label>
+                    <a href="#">Quên mật khẩu?</a>
+                </li>
+            </ul>
+
+            <div class="aitssendbuttonw3ls">
+                <input type="submit" value="Đăng nhập"/>
+                <p> Đăng ký tài khoản <span>→</span> <a class="w3_play_icon1" href="@Url.Action("Register","Account")"> Click tại đây</a></p>
+                <div class="clear"></div>
+            </div>
+        </div>
+    }
+    
+    <script type="text/javascript" src="~/Content/js/jquery-2.1.4.min.js"></script>
+</body>
+</html>
