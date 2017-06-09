@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dao\CityDao.cs" />
+    <Compile Include="Dao\FeedBackDao.cs" />
     <Compile Include="Dao\ProductCategoryDao.cs" />
     <Compile Include="Dao\UserDao.cs" />
     <Compile Include="EF\Category.cs" />
