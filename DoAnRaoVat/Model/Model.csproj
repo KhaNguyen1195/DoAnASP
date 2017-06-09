@@ -59,7 +59,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dao\CityDao.cs" />
+    <Compile Include="Dao\ProductCategoryDao.cs" />
     <Compile Include="Dao\UserDao.cs" />
+    <Compile Include="EF\Category.cs" />
+    <Compile Include="EF\City.cs" />
     <Compile Include="EF\DoAnASPDBContext.cs" />
     <Compile Include="EF\FeedBack.cs" />
     <Compile Include="EF\News.cs" />

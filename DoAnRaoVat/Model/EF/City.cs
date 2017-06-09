@@ -6,25 +6,18 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("ProductCategory")]
-    public partial class ProductCategory
+    [Table("City")]
+    public partial class City
     {
         public long ID { get; set; }
 
-        [StringLength(250)]
-        [Display(Name = "Tên danh mục")]
+        [StringLength(50)]
+        [Display(Name = "Tên khu vực")]
         public string Name { get; set; }
-
-        [StringLength(250)]
-        public string MetaTitle { get; set; }
-
-        public long? ParentID { get; set; }
-
-        public DateTime? CreatedDate { get; set; }
-
-        public DateTime? ModifiedDate { get; set; }
 
         [Display(Name = "Trạng thái")]
         public bool Status { get; set; }
+
+        public DateTime? CreatedDate { get; set; }
     }
 }
