@@ -97,16 +97,34 @@
                             <span>Trang chủ</span>
                         </a>
                     </li>
+                    <li>
+                        <a class="" href="@Url.Action("Index","User")">
+                            <i class="icon_group"></i>
+                            <span>Quản lý người dùng</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="@Url.Action("Index","City")">
+                            <i class="icon_group"></i>
+                            <span>Quản lý khu vực</span>
+                        </a>
+                    </li>
                     <li class="sub-menu">
                         <a href="javascript:;" class="">
                             <i class="icon_document_alt"></i>
-                            <span>Forms</span>
+                            <span>Quản lý danh mục</span>
                             <span class="menu-arrow arrow_carrot-right"></span>
                         </a>
                         <ul class="sub">
-                            <li><a class="" href="form_component.html">Form Elements</a></li>
-                            <li><a class="" href="form_validation.html">Form Validation</a></li>
+                            <li><a class="" href="@Url.Action("Index","ProductCategory")">Danh mục</a></li>
+                            <li><a class="" href="@Url.Action("Index","Category")">Loại danh mục</a></li>
                         </ul>
+                    </li>
+                    <li>
+                        <a class="" href="@Url.Action("Index","FeedBack")">
+                            <i class="icon_group"></i>
+                            <span>Phản hồi ý kiến</span>
+                        </a>
                     </li>
                     <li class="sub-menu">
                         <a href="javascript:;" class="">
@@ -120,12 +138,7 @@
                             <li><a class="" href="grids.html">Grids</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a class="" href="@Url.Action("Index","User")">
-                            <i class="icon_group"></i>
-                            <span>Quản lý người dùng</span>
-                        </a>
-                    </li>
+                    
                     <li>
                         <a class="" href="chart-chartjs.html">
                             <i class="icon_piechart"></i>

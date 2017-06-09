@@ -1,0 +1,60 @@
+﻿@model Model.EF.City
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <ol class="breadcrumb">
+                    <li><i class="fa fa-home"></i><a href="index1.html">Trang chủ</a></li>
+                    <li><i class="fa fa-users"></i>Quản lý khu vực</li>
+                    <li>Thêm mới</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading"><h2><strong>Nhập thông tin khu vực</strong></h2></header>
+                    <div class="panel-body">
+                        <div class="form">
+                            @using (Html.BeginForm("Create", "City", FormMethod.Post, new { @class = "form-group form-validate" }))
+                            {
+                                @Html.AntiForgeryToken()
+
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                <div class="form-group col-lg-6">
+                                    @Html.LabelFor(model => model.Name, new { @class = "control-label col-lg-4" })
+                                    <div class="col-lg-8">
+                                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @autofocus = "autofocus", @placeholder = "Tên khu vực" })
+                                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    @Html.LabelFor(model => model.Status, new { @class = "control-label col-lg-4" })
+                                    <div class="col-lg-8">
+                                        @Html.CheckBoxFor(model => model.Status, new { @class = "checkbox form-control", @style = "width:20px;" })
+                                        @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Tạo mới" class="btn btn-primary" />
+                                        <button type="reset" class="btn btn-default">Làm mới</button>
+                                        <a href="@Url.Action("Index","City")" class="btn btn-success" type="button">Quay lại</a>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</section>
