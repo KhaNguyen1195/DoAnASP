@@ -84,5 +84,7 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
             dao.Delete(id);
             return RedirectToAction("Index");
         }
+
+        
     }
 }
