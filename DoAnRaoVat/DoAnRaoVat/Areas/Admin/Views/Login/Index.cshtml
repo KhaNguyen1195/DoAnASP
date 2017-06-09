@@ -41,7 +41,7 @@
                 <p class="login-img"><i class="icon_lock_alt"></i></p>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="icon_profile"></i></span>
-                    @Html.TextBoxFor(model=>model.Phone, new { @class= "form-control", @autofocus="autofocus", @placeholder="Số điện thoại" })                   
+                    @Html.TextBoxFor(model=>model.UserName, new { @class= "form-control", @autofocus="autofocus", @placeholder="Tài khoản" })                   
                     @*<input type="text" class="form-control" placeholder="Username" autofocus>*@
                 </div>
                 <div class="input-group">
@@ -53,7 +53,7 @@
                     @Html.CheckBoxFor(model => model.RemmemberMe) Remember Me
                     @*<input type="checkbox" value="remember-me"> Remember me*@
                 </label>
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Đăng nhập</button>
             </div>
         }
         

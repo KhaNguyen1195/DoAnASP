@@ -17,7 +17,5 @@ namespace Model.EF
         public bool? Status { get; set; }
 
         public long? ProductCategory_ID { get; set; }
-
-        public DateTime? CreatedDate { get; set; }
     }
 }

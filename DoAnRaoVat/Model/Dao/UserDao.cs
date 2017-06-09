@@ -31,6 +31,7 @@ namespace Model.Dao
                 {
                     user.Password = entity.Password;
                 }
+                user.Username = entity.Username;
                 user.Name = entity.Name;
                 user.Address = entity.Address;
                 user.Email = entity.Email;
@@ -56,9 +57,10 @@ namespace Model.Dao
             return model.OrderByDescending(x => x.CreatedDate).ToPagedList(page, pageSize);
         }
 
-        public User GetByID(string Phone)
+        //lấy username theo ID cho login
+        public User GetByID(string UserName)
         {
-            return db.Users.SingleOrDefault(x => x.Phone == Phone);
+            return db.Users.SingleOrDefault(x => x.Username == UserName);
         }
 
         public User ViewDetail(int id)
@@ -66,9 +68,9 @@ namespace Model.Dao
             return db.Users.Find(id);
         }
 
-        public int Login(string Phone, string PassWord)
+        public int Login(string UserName, string PassWord)
         {
-            var result = db.Users.SingleOrDefault(x => x.Phone == Phone);
+            var result = db.Users.SingleOrDefault(x => x.Username == UserName);
             if (result == null)
             {
                 return 0;
@@ -103,6 +105,16 @@ namespace Model.Dao
             db.Users.Remove(user);
             db.SaveChanges();
             return true;
+        }
+
+        //Kiểm tra Đăng ký
+        public bool CheckUserName(string userName)
+        {
+            return db.Users.Count(u => u.Username == userName) > 0;
+        }
+        public bool CheckPhone(string phone)
+        {
+            return db.Users.Count(u => u.Phone == phone) > 0;
         }
     }
 }

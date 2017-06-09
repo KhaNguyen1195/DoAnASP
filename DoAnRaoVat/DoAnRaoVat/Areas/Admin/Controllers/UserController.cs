@@ -77,28 +77,12 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
             }
             return View("Index");
         }
-
-        
+      
         public ActionResult Delete(int id)
         {
             var dao = new UserDao();
             dao.Delete(id);
             return RedirectToAction("Index");
         }
-
-        DoAnASPDBContext db = new DoAnASPDBContext();
-        
-        //[HttpPost]
-        //public ActionResult MultiDelete(int[] chkId)
-        //{
-        //    for (int i = 0; i < chkId.Length; i++)
-        //    {
-        //        int temp = chkId[i];
-        //        var model = this.db.Users.Where(ar => ar.ID == temp).SingleOrDefault();
-        //        this.db.Users.Remove(model);
-        //    }
-        //    this.db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
     }
 }

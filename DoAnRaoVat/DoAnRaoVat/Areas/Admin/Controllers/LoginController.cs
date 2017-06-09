@@ -22,23 +22,23 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 var dao = new UserDao();
-                var result = dao.Login(model.Phone, Encryptor.MD5Hash(model.Password));
+                var result = dao.Login(model.UserName, Encryptor.MD5Hash(model.Password));
                 if (result == 1)
                 {
-                    var user = dao.GetByID(model.Phone);
+                    var user = dao.GetByID(model.UserName);
                     var userSession = new UserLogin();
-                    userSession.Phone = user.Phone;
+                    userSession.UserName = user.Username;
                     userSession.UserID = user.ID;
                     Session.Add(CommonConstants.USER_SESSION, userSession);
                     return RedirectToAction("Index", "Home");
                 }
                 else if (result == 0)
                 {
-                    ModelState.AddModelError("", "Số điện thoại không tồn tại");
+                    ModelState.AddModelError("", "Tài khoản không tồn tại");
                 }
                 else if (result == -1)
                 {
-                    ModelState.AddModelError("", "Số điện thoại đang bị khóa");
+                    ModelState.AddModelError("", "Tài khoản đang bị khóa");
                 }
                 else if (result == -2)
                 {
@@ -51,11 +51,6 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
             }
             return View("Index");
         }
-        //Dang xuat he thong 
-        public ActionResult Logout()
-        {
-            Session["Phone"] = null;
-            return new RedirectResult("/Admin/Login/Index");
-        }
+        
     }
 }

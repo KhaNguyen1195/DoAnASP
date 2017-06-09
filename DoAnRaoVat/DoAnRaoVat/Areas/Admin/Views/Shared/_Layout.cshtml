@@ -52,10 +52,16 @@
                             <span class="profile-ava">
                                 <img alt="" src="~/Areas/Admin/Content/img/avatar1_small.jpg">
                             </span>
-                            <span class="username">
-                                Nguyên
-                            </span>
-                            <b class="caret"></b>
+                            @{
+                                var session = (UserLogin)Session[DoAnRaoVat.Common.CommonConstants.USER_SESSION];
+                            }
+                            @if (session != null)
+                            {
+                                <span class="username">
+                                    @session.UserName
+                                </span>
+                                        <b class="caret"></b>
+                            }
                         </a>
                         <ul class="dropdown-menu extended logout">
                             <div class="log-arrow-up"></div>

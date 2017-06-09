@@ -1,4 +1,4 @@
-﻿namespace Model.EF
+namespace Model.EF
 {
     using System;
     using System.Collections.Generic;
@@ -12,11 +12,9 @@
         public long ID { get; set; }
 
         [StringLength(50)]
-        [Display(Name = "Tên khu vực")]
         public string Name { get; set; }
 
-        [Display(Name = "Trạng thái")]
-        public bool Status { get; set; }
+        public bool? Status { get; set; }
 
         public DateTime? CreatedDate { get; set; }
     }
