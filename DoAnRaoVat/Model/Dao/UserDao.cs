@@ -39,17 +39,17 @@ namespace Model.Dao
                 db.SaveChanges();
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return false;
             }
-            
+
         }
 
-        public IEnumerable<User> LissAllPaging( string searchString, int page, int pageSize)
+        public IEnumerable<User> LissAllPaging(string searchString, int page, int pageSize)
         {
             IQueryable<User> model = db.Users;
-            if(!string.IsNullOrEmpty(searchString))
+            if (!string.IsNullOrEmpty(searchString))
             {
                 model = model.Where(x => x.Username.Contains(searchString) || x.Phone.Contains(searchString));
             }
@@ -58,7 +58,7 @@ namespace Model.Dao
 
         public User GetByID(string Phone)
         {
-            return db.Users.SingleOrDefault(x=>x.Phone == Phone);
+            return db.Users.SingleOrDefault(x => x.Phone == Phone);
         }
 
         public User ViewDetail(int id)
@@ -69,7 +69,7 @@ namespace Model.Dao
         public int Login(string Phone, string PassWord)
         {
             var result = db.Users.SingleOrDefault(x => x.Phone == Phone);
-            if(result == null)
+            if (result == null)
             {
                 return 0;
             }
@@ -95,17 +95,14 @@ namespace Model.Dao
 
         public bool Delete(int id)
         {
-            try
-            {
-                var user = db.Users.Find(id);
-                db.Users.Remove(user);
-                db.SaveChanges();
-                return true;
-            }catch(Exception)
+            var user = db.Users.SingleOrDefault(x => x.ID == id);
+            if (user == null)
             {
                 return false;
             }
-            
+            db.Users.Remove(user);
+            db.SaveChanges();
+            return true;
         }
     }
 }
