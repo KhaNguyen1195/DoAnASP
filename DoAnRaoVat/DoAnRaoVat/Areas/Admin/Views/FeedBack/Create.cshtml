@@ -63,7 +63,7 @@
                                 <div class="form-group col-lg-6">
                                     @Html.LabelFor(model => model.Content, new { @class = "control-label col-lg-4" })
                                     <div class="col-lg-8">
-                                        @Html.TextBoxFor(model => model.Content, new { @class = "form-control" })
+                                        @Html.TextAreaFor(model => model.Content, new { @class = "form-control" })
                                         @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
                                     </div>
                                 </div>

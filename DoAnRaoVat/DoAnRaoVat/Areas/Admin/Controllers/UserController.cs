@@ -38,6 +38,7 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
             if(ModelState.IsValid)
             {
                 var dao = new UserDao();
+                user.CreatedDate = DateTime.Now;
                 var encrytedMd5Pas = Encryptor.MD5Hash(user.Password);
                 user.Password = encrytedMd5Pas;
 

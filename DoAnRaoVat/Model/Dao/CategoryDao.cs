@@ -8,35 +8,35 @@ using System.Threading.Tasks;
 
 namespace Model.Dao
 {
-    public class ProductCategoryDao
+    public class CategoryDao
     {
         DoAnASPDBContext db = null;
-        public ProductCategoryDao()
+        public CategoryDao()
         {
             db = new DoAnASPDBContext();
         }
 
-        public long Insert(ProductCategory entity)
+        public long Insert(Category entity)
         {
-            db.ProductCategories.Add(entity);
+            db.Categories.Add(entity);
             db.SaveChanges();
             return entity.ID;
         }
 
-        public ProductCategory GetByID(string Name)
+        public Category GetByID(string Name)
         {
-            return db.ProductCategories.SingleOrDefault(x => x.Name == Name);
+            return db.Categories.SingleOrDefault(x => x.Name == Name);
         }
 
-        public ProductCategory ViewDetail(int id)
+        public Category ViewDetail(int id)
         {
-            return db.ProductCategories.Find(id);
+            return db.Categories.Find(id);
         }
 
 
-        public IEnumerable<ProductCategory> LissAllPaging(string searchString, int page, int pageSize)
+        public IEnumerable<Category> LissAllPaging(string searchString, int page, int pageSize)
         {
-            IQueryable<ProductCategory> model = db.ProductCategories;
+            IQueryable<Category> model = db.Categories;
             if (!string.IsNullOrEmpty(searchString))
             {
                 model = model.Where(x => x.Name.Contains(searchString));
@@ -44,13 +44,15 @@ namespace Model.Dao
             return model.OrderByDescending(x => x.CreatedDate).ToPagedList(page, pageSize);
         }
 
-        public bool Update(ProductCategory entity)
+        public bool Update(Category entity)
         {
             try
             {
-                var productcategory = db.ProductCategories.Find(entity.ID);
-                productcategory.Name = entity.Name;
-                productcategory.Status = entity.Status;
+                var category = db.Categories.Find(entity.ID);
+                category.Code = entity.Code;
+                category.Name = entity.Name;
+                category.ModifiedDate =(DateTime.Now);
+                category.Status = entity.Status;
                 db.SaveChanges();
                 return true;
             }
@@ -63,12 +65,12 @@ namespace Model.Dao
 
         public bool Delete(int id)
         {
-            var productcategory = db.ProductCategories.SingleOrDefault(x => x.ID == id);
-            if (productcategory == null)
+            var category = db.Categories.SingleOrDefault(x => x.ID == id);
+            if (category == null)
             {
                 return false;
             }
-            db.ProductCategories.Remove(productcategory);
+            db.Categories.Remove(category);
             db.SaveChanges();
             return true;
         }

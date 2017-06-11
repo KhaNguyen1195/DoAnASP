@@ -50,8 +50,8 @@
                         <table class="table table-bordered">
                             <thead style="font-size:18px;">
                                 <tr>
-                                    @*<th class="kc" style="width:10px;"><input type="checkbox" id="inlineCheckbox1" value="option1"></th>*@
                                     <th class="kc">STT</th>
+                                    <th class="kc">Mã khu vực</th>
                                     <th class="kc">Tên khu vực</th>
                                     <th class="kc" style="min-width:50px;">Hành động</th>
                                 </tr>
@@ -60,8 +60,8 @@
                                 @foreach (var item in Model)
                                 {
                                     <tr id="row_@item.ID">
-                                        @*<td class="kc"><input type="checkbox" class="chkId" name="chkId" value="@item.ID"></td>*@
                                         <td class="kc">@(stt++)</td>
+                                        <td class="kc">@item.Code</td>
                                         <td class="kc">@item.Name</td>
                                         <td>
                                             <div class="kc">

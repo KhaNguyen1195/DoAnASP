@@ -31,6 +31,7 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
             if(ModelState.IsValid)
             {
                 var dao = new CityDao();
+                city.CreatedDate = DateTime.Now;
                 long id = dao.Insert(city);
                 if(id > 0)
                 {

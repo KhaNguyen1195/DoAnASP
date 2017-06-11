@@ -1,4 +1,4 @@
-﻿@model PagedList.IPagedList<Model.EF.ProductCategory>
+﻿@model PagedList.IPagedList<Model.EF.Category>
 @using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <ol class="breadcrumb">
-                    <li><i class="fa fa-home"></i><a href="@Url.Action("Index","ProductCategory")">Trang chủ</a></li>
+                    <li><i class="fa fa-home"></i><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
                     <li><i class="fa fa-users"></i>Quản lý danh mục</li>
                     <li>Danh sách danh mục</li>
                 </ol>
@@ -27,7 +27,7 @@
                         <!--Tìm kiếm--->
                         <div class="col-sm-offset-3 col-sm-3">
                             <form class="form-group" role="form">
-                                @using (Html.BeginForm("Index", "ProductCategory", FormMethod.Get))
+                                @using (Html.BeginForm("Index", "Category", FormMethod.Get))
                                 {
                                     <div class="input-group">
                                         <input type="text" class="form-control input-sm" placeholder="Tìm kiếm..." value="@ViewBag.SearchString" name="searchString">
@@ -42,15 +42,15 @@
                         </div>
                         <!--Tìm kiếm --->
                         <div class="button-ds">
-                            <a class="btn btn-primary btn-sm" href="@Url.Action("Create","ProductCategory")">Thêm mới</a>
+                            <a class="btn btn-primary btn-sm" href="@Url.Action("Create","Category")">Thêm mới</a>
                         </div>
                     </header>
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead style="font-size:18px;">
                                 <tr>
-                                    @*<th class="kc" style="width:10px;"><input type="checkbox" id="inlineCheckbox1" value="option1"></th>*@
                                     <th class="kc">STT</th>
+                                    <th class="kc">Mã danh mục</th>
                                     <th class="kc">Tên danh mục</th>
                                     <th class="kc" style="min-width:50px;">Hành động</th>
                                 </tr>
@@ -59,16 +59,16 @@
                                 @foreach (var item in Model)
                                 {
                                     <tr id="row_@item.ID">
-                                        @*<td class="kc"><input type="checkbox" class="chkId" name="chkId" value="@item.ID"></td>*@
                                         <td class="kc">@(stt++)</td>
+                                        <td class="kc">@item.Code</td>
                                         <td class="kc">@item.Name</td>
                                         <td>
                                             <div class="kc">
-                                                <a href="@Url.Action("Edit","ProductCategory", new {@ID=@item.ID })" class="btn btn-info btn-sm tooltips"
+                                                <a href="@Url.Action("Edit","Category", new {@ID=@item.ID })" class="btn btn-info btn-sm tooltips"
                                                    data-placement="top" data-toggle="tooltip" data-original-title="Chỉnh sửa">
                                                     <i class="fa fa-pencil"></i>
                                                 </a>
-                                                <a href="@Url.Action("Delete","ProductCategory", new {@ID=@item.ID })" onclick="return confirm('Bạn chắc chắn muốn xóa?')"
+                                                <a href="@Url.Action("Delete","Category", new {@ID=@item.ID })" onclick="return confirm('Bạn chắc chắn muốn xóa?')"
                                                    class="btn btn-danger btn-sm tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Xóa">
                                                     <i class="fa fa-trash-o"></i>
                                                 </a>

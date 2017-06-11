@@ -8,12 +8,12 @@ using System.Web.Mvc;
 
 namespace DoAnRaoVat.Areas.Admin.Controllers
 {
-    public class ProductCategoryController : BaseController
+    public class CategoryController : BaseController
     {
-        // GET: Admin/ProductCategory
+        // GET: Admin/Category
         public ActionResult Index(string searchString, int page = 1, int pageSize = 5)
         {
-            var dao = new ProductCategoryDao();
+            var dao = new CategoryDao();
             var model = dao.LissAllPaging(searchString, page, pageSize);
             ViewBag.searchString = searchString;
             return View(model);
@@ -27,15 +27,16 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(ProductCategory productcategory)
+        public ActionResult Create(Category category)
         {
             if (ModelState.IsValid)
             {
-                var dao = new ProductCategoryDao();
-                long id = dao.Insert(productcategory);
+                var dao = new CategoryDao();
+                category.CreatedDate = DateTime.Now;
+                long id = dao.Insert(category);
                 if (id > 0)
                 {
-                    return RedirectToAction("Index", "ProductCategory");
+                    return RedirectToAction("Index", "Category");
                 }
                 else
                 {
@@ -47,21 +48,21 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
 
         public ActionResult Edit(int id)
         {
-            var productcategory = new ProductCategoryDao().ViewDetail(id);
-            return View(productcategory);
+            var category = new CategoryDao().ViewDetail(id);
+            return View(category);
         }
 
 
         [HttpPost]
-        public ActionResult Edit(ProductCategory productcategory)
+        public ActionResult Edit(Category category)
         {
             if (ModelState.IsValid)
             {
-                var dao = new ProductCategoryDao();
-                var result = dao.Update(productcategory);
+                var dao = new CategoryDao();
+                var result = dao.Update(category);
                 if (result)
                 {
-                    return RedirectToAction("Index", "ProductCategory");
+                    return RedirectToAction("Index", "Category");
                 }
                 else
                 {
@@ -73,11 +74,11 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
 
         public ActionResult Delete(int id)
         {
-            var dao = new ProductCategoryDao();
+            var dao = new CategoryDao();
             dao.Delete(id);
             return RedirectToAction("Index");
         }
 
-        DoAnASPDBContext db = new DoAnASPDBContext();
+        
     }
 }

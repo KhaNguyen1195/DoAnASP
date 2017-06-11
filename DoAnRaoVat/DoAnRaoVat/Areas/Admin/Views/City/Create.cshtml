@@ -29,12 +29,21 @@
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                                 <div class="form-group col-lg-6">
+                                    @Html.LabelFor(model => model.Code, new { @class = "control-label col-lg-4" })
+                                    <div class="col-lg-8">
+                                        @Html.TextBoxFor(model => model.Code, new { @class = "form-control", @autofocus = "autofocus", @placeholder = "Mã khu vực" })
+                                        @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-lg-6">
                                     @Html.LabelFor(model => model.Name, new { @class = "control-label col-lg-4" })
                                     <div class="col-lg-8">
-                                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @autofocus = "autofocus", @placeholder = "Tên khu vực" })
+                                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @placeholder = "Tên khu vực" })
                                         @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
+
                                 <div class="form-group col-lg-6">
                                     @Html.LabelFor(model => model.Status, new { @class = "control-label col-lg-4" })
                                     <div class="col-lg-8">
