@@ -57,7 +57,7 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
                     ModelState.AddModelError("","Thêm người dùng không thành công");
                 }
             }
-            return View("Index");
+            return View("Create");
         }
 
         [HttpPost]
@@ -82,7 +82,7 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
                     ModelState.AddModelError("", "Cập nhật người dùng không thành công");
                 }
             }
-            return View("Index");
+            return View("Edit");
         }
 
         //[HasCredential(RoleID = "DELETE_USER")]

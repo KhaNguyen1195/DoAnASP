@@ -24,7 +24,7 @@
                     <header class="panel-heading"><h2><strong>Nhập thông tin người dùng</strong></h2></header>
                     <div class="panel-body">
                         <div class="form">
-                            @using (Html.BeginForm("Create", "User", FormMethod.Post, new { @class = "form-group form-validate" }))
+                            @using (Html.BeginForm("Create", "User", FormMethod.Post, new { @class = "form-group" }))
                             {
                                 @Html.AntiForgeryToken()
 

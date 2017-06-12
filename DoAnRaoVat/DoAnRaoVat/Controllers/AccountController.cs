@@ -45,6 +45,7 @@ namespace DoAnRaoVat.Controllers
                 {
                     var user = new User();
                     user.Username = model.Username;
+                    user.UserGroupID = model.UserGroupID;
                     user.Name = model.Name;
                     user.Password = Encryptor.MD5Hash(model.Password);
                     user.Phone = model.Phone;

@@ -9,7 +9,7 @@ namespace Model.Validation
 {
     public class CityMetaData
     {
-        [Key]
+        //[Key]
         public long ID { get; set; }
 
         [Required(ErrorMessage = "Yêu cầu nhập Mã thành phố")]

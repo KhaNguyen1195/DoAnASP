@@ -24,7 +24,9 @@ namespace Model.EF
 
         public decimal? Price { get; set; }
 
-        public long? CategoryID { get; set; }
+        public long? ProductID { get; set; }
+
+        public long? CityID { get; set; }
 
         [Column(TypeName = "ntext")]
         public string Detail { get; set; }
@@ -36,5 +38,9 @@ namespace Model.EF
         public bool? Status { get; set; }
 
         public int? ViewCount { get; set; }
+
+        public virtual City City { get; set; }
+
+        public virtual Product Product { get; set; }
     }
 }

@@ -5,8 +5,10 @@ namespace Model.EF
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using Validation;
 
     [Table("FeedBack")]
+    [MetadataType(typeof(FeedBackMetaData))]
     public partial class FeedBack
     {
         public long ID { get; set; }

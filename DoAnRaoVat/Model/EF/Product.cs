@@ -5,16 +5,14 @@ namespace Model.EF
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-    using Validation;
 
-    [Table("Category")]
-    [MetadataType(typeof(CategoryMetaData))]
-    public partial class Category
+    [Table("Product")]
+    public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Category()
+        public Product()
         {
-            Products = new HashSet<Product>();
+            News = new HashSet<News>();
         }
 
         public long ID { get; set; }
@@ -22,21 +20,18 @@ namespace Model.EF
         [StringLength(50)]
         public string Code { get; set; }
 
-        [StringLength(250)]
+        [StringLength(50)]
         public string Name { get; set; }
 
-        [StringLength(250)]
-        public string MetaTitle { get; set; }
+        public bool? Status { get; set; }
 
-        public long? ParentID { get; set; }
+        public long? Category_ID { get; set; }
 
         public DateTime? CreatedDate { get; set; }
 
-        public DateTime? ModifiedDate { get; set; }
-
-        public bool Status { get; set; }
+        public virtual Category Category { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<News> News { get; set; }
     }
 }
