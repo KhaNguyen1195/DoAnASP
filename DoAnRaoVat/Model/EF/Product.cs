@@ -6,11 +6,11 @@ namespace Model.EF
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("City")]
-    public partial class City
+    [Table("Product")]
+    public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public City()
+        public Product()
         {
             News = new HashSet<News>();
         }
@@ -25,7 +25,11 @@ namespace Model.EF
 
         public bool Status { get; set; }
 
+        public long? Category_ID { get; set; }
+
         public DateTime? CreatedDate { get; set; }
+
+        public virtual Category Category { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<News> News { get; set; }

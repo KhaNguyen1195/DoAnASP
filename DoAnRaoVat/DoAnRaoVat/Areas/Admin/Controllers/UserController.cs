@@ -41,9 +41,28 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
                 var encrytedMd5Pas = Encryptor.MD5Hash(user.Password);
                 user.Password = encrytedMd5Pas;
 
+                user.CreatedDate = DateTime.Now;
+                //var user = new User();
+                //user.Username = model.Username;
+                //user.Name = model.Name;
+                //user.Password = Encryptor.MD5Hash(model.Password);
+                //user.Phone = model.Phone;
+                //user.Email = model.Email;
+                //user.Address = model.Address;
+                //user.CreatedDate = DateTime.Now;
+                //user.Status = true;
+                //var result = dao.Insert(user);
+                //if (result > 0)
+                //{
+                //    ViewBag.Success = "Đăng ký thành công";
+                //    model = new RegisterModels();
+
+                //}
+
                 long id = dao.Insert(user);
                 if (id > 0)
                 {
+                    ViewBag.Success = "Đăng ký thành công";
                     return RedirectToAction("Index", "User");
                 }
                 else

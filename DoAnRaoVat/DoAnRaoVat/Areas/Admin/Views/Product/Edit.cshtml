@@ -1,4 +1,4 @@
-﻿@model Model.EF.ProductCategory
+﻿@model Model.EF.Product
 
 @{
     ViewBag.Title = "Edit";
@@ -22,17 +22,33 @@
                     <header class="panel-heading"><h2><strong>Cập nhật thông tin danh mục</strong></h2></header>
                     <div class="panel-body">
                         <div class="form">
-                            @using (Html.BeginForm("Edit", "ProductCategory", FormMethod.Post, new { @class = "form-group" }))
+                            @using (Html.BeginForm("Edit", "Category", FormMethod.Post, new { @class = "form-group" }))
                             {
                                 @Html.AntiForgeryToken()
 
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                                 <div class="form-group col-lg-6">
+                                    @Html.LabelFor(model => model.Code, new { @class = "control-label col-lg-4" })
+                                    <div class="col-lg-8">
+                                        @Html.TextBoxFor(model => model.Code, new { @class = "form-control", @autofocus = "autofocus", @placeholder = "Tên loại danh mục" })
+                                        @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-lg-6">
                                     @Html.LabelFor(model => model.Name, new { @class = "control-label col-lg-4" })
                                     <div class="col-lg-8">
                                         @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @autofocus = "autofocus", @placeholder = "Tên danh mục" })
                                         @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-lg-6">
+                                    @Html.LabelFor(model => model.Category_ID, new { @class = "control-label col-lg-4" })
+                                    <div class="col-lg-8">
+                                        @Html.DropDownListFor(model => model.Category_ID,null, new { @class = "form-control", @autofocus = "autofocus"})
+                                        @Html.ValidationMessageFor(model => model.Category_ID, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
 
@@ -47,7 +63,7 @@
                                 <div class="form-group">
                                     <div class="col-md-offset-2 col-md-10">
                                         <input type="submit" value="Cập nhật" class="btn btn-primary" />
-                                        <a href="@Url.Action("Index","ProductCategory")" class="btn btn-success" type="button">Quay lại</a>
+                                        <a href="@Url.Action("Index","Category")" class="btn btn-success" type="button">Quay lại</a>
                                     </div>
                                 </div>
                             }
