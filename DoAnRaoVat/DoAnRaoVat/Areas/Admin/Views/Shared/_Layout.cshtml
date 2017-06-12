@@ -68,16 +68,7 @@
                             <li class="eborder-top">
                                 <a href="#"><i class="icon_profile"></i> Thông tin cá nhân</a>
                             </li>
-                            <li>
-                                <a href="#"><i class="icon_mail_alt"></i> My Inbox</a>
-                            </li>
                             <li>@Html.ActionLink("Thoát", "Logout", "Login")</li>
-                            <li>
-                                <a href=""><i class="icon_key_alt"></i> Documentation</a>
-                            </li>
-                            <li>
-                                <a href=""><i class="icon_key_alt"></i> Documentation</a>
-                            </li>
                         </ul>
                     </li>
                     <!-- user login dropdown end -->
@@ -97,18 +88,27 @@
                             <span>Trang chủ</span>
                         </a>
                     </li>
-                    <li>
-                        <a class="" href="@Url.Action("Index","User")">
+
+                    <li class="sub-menu">
+                        <a href="javascript:;" class="">
                             <i class="icon_group"></i>
-                            <span>Quản lý người dùng</span>
+                            <span>Quản lý hệ thống</span>
+                            <span class="menu-arrow arrow_carrot-right"></span>
                         </a>
+                        <ul class="sub">
+                            <li><a class="" href="@Url.Action("Index","User")"><span>Quản lý người dùng</span></a></li>
+                            <li><a class="" href=""><span>Quản lý nhóm người dùng</span></a></li>
+                            <li><a class="" href=""><span>Phân quyền sử dụng</span></a></li>
+                        </ul>
                     </li>
+
                     <li>
                         <a class="" href="@Url.Action("Index","City")">
-                            <i class="icon_group"></i>
+                            <i class="icon_map_alt"></i>
                             <span>Quản lý khu vực</span>
                         </a>
                     </li>
+
                     <li class="sub-menu">
                         <a href="javascript:;" class="">
                             <i class="icon_document_alt"></i>
@@ -120,57 +120,15 @@
                             <li><a class="" href="@Url.Action("Index","Product")">Loại danh mục</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a class="" href="@Url.Action("Index","FeedBack")">
-                            <i class="icon_group"></i>
+                            <i class="icon_comment_alt"></i>
                             <span>Phản hồi ý kiến</span>
                         </a>
                     </li>
-                    <li class="sub-menu">
-                        <a href="javascript:;" class="">
-                            <i class="icon_desktop"></i>
-                            <span>UI Fitures</span>
-                            <span class="menu-arrow arrow_carrot-right"></span>
-                        </a>
-                        <ul class="sub">
-                            <li><a class="" href="general.html">Elements</a></li>
-                            <li><a class="" href="buttons.html">Buttons</a></li>
-                            <li><a class="" href="grids.html">Grids</a></li>
-                        </ul>
-                    </li>
+
                     
-                    <li>
-                        <a class="" href="chart-chartjs.html">
-                            <i class="icon_piechart"></i>
-                            <span>Charts</span>
-                        </a>
-
-                    </li>
-
-                    <li class="sub-menu">
-                        <a href="javascript:;" class="">
-                            <i class="icon_table"></i>
-                            <span>Tables</span>
-                            <span class="menu-arrow arrow_carrot-right"></span>
-                        </a>
-                        <ul class="sub">
-                            <li><a class="" href="basic_table.html">Basic Table</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="sub-menu">
-                        <a href="javascript:;" class="">
-                            <i class="icon_documents_alt"></i>
-                            <span>Pages</span>
-                            <span class="menu-arrow arrow_carrot-right"></span>
-                        </a>
-                        <ul class="sub">
-                            <li><a class="" href="profile.html">Profile</a></li>
-                            <li><a class="" href="login.html"><span>Login Page</span></a></li>
-                            <li><a class="" href="blank.html">Blank Page</a></li>
-                            <li><a class="" href="404.html">404 Error</a></li>
-                        </ul>
-                    </li>
 
                 </ul>
                 <!-- sidebar menu end-->

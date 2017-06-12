@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Model.EF;
 using PagedList;
+using Common;
 
 namespace Model.Dao
 {
@@ -68,7 +69,25 @@ namespace Model.Dao
             return db.Users.Find(id);
         }
 
-        public int Login(string UserName, string PassWord)
+        //public List<string> GetListCredential(string userName)
+        //{
+        //    var user = db.Users.Single(x => x.Username == userName);
+        //    var data = (from cre in db.Credentials
+        //               join gr in db.UserGroups on cre.UserGroupID equals gr.ID
+        //               join rol in db.Roles on cre.RoleID equals rol.ID
+        //               where gr.ID == user.UserGroupID
+        //               select new 
+        //               {
+        //                   RoleID= cre.RoleID,
+        //                   UserGroupID=cre.UserGroupID
+        //               }).AsEnumerable().Select(x=>new Credential() {
+        //                   RoleID=x.RoleID,
+        //                   UserGroupID=x.UserGroupID
+        //                });
+        //    return data.Select(x=>x.RoleID).ToList();      
+        }
+
+        public int Login(string UserName, string PassWord, bool IsLoginAdmin = false)
         {
             var result = db.Users.SingleOrDefault(x => x.Username == UserName);
             if (result == null)
@@ -77,21 +96,52 @@ namespace Model.Dao
             }
             else
             {
-                if (result.Status == false)
+                if (IsLoginAdmin == true)
                 {
-                    return -1;
-                }
-                else
-                {
-                    if (result.Password == PassWord)
+                    if (result.UserGroupID == CommonConstants.ADMIN_GROUP)
                     {
-                        return 1;
+                        if (result.Status == false)
+                        {
+                            return -1;
+                        }
+                        else
+                        {
+                            if (result.Password == PassWord)
+                            {
+                                return 1;
+                            }
+                            else
+                            {
+                                return -2;
+                            }
+                        }
                     }
                     else
                     {
-                        return -2;
+                        return -3; 
+
                     }
                 }
+                else
+                {
+                    if (result.Status == false)
+                    {
+                        return -1;
+                    }
+                    else
+                    {
+                        if (result.Password == PassWord)
+                        {
+                            return 1;
+                        }
+                        else
+                        {
+                            return -2;
+                        }
+                    }
+
+                }
+                
             }
         }
 
