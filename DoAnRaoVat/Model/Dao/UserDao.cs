@@ -85,7 +85,7 @@ namespace Model.Dao
         //                   UserGroupID=x.UserGroupID
         //                });
         //    return data.Select(x=>x.RoleID).ToList();      
-        }
+        //}
 
         public int Login(string UserName, string PassWord, bool IsLoginAdmin = false)
         {
