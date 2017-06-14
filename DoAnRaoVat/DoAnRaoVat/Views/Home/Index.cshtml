@@ -2,296 +2,192 @@
     ViewBag.Title = "Home";
 }
 
-<!-- banner -->
-<!--/banner-section-->
-<div id="demo-1" data-zs-src='["/Content/images/2.jpg", "/Content/images/1.jpg", "/Content/images/3.jpg","/Content/images/4.jpg"]' data-zs-overlay="dots">
-    <div class="demo-inner-content">
-        <!--/banner-info-->
-        <div class="baner-info">
-            <h3>Your <span>Edge</span> in <span>Real</span> Home</h3>
-            <h4>Build Your Dream Villa</h4>
-            <span><img src="~/Content/images/logo2.png" alt=""></span>
-        </div>
-        <!--/banner-ingo-->
-    </div>
+<!-- Slider -->
+<div class="slider">
+    <ul class="rslides" id="slider">
+        <li>
+            <div class="w3ls-slide-text">
+                <h3>Sell or Advertise anything online</h3>
+                <a href="categories.html" class="w3layouts-explore-all">Browse all Categories</a>
+            </div>
+        </li>
+        <li>
+            <div class="w3ls-slide-text">
+                <h3>Find the Best Deals Here</h3>
+                <a href="categories.html" class="w3layouts-explore">Explore</a>
+            </div>
+        </li>
+        <li>
+            <div class="w3ls-slide-text">
+                <h3>Lets build the home of your dreams</h3>
+                <a href="real-estate.html" class="w3layouts-explore">Explore</a>
+            </div>
+        </li>
+        <li>
+            <div class="w3ls-slide-text">
+                <h3>Find your dream ride</h3>
+                <a href="bikes.html" class="w3layouts-explore">Explore</a>
+            </div>
+        </li>
+        <li>
+            <div class="w3ls-slide-text">
+                <h3>The Easiest Way to get a Job</h3>
+                <a href="jobs.html" class="w3layouts-explore">Find a Job</a>
+            </div>
+        </li>
+    </ul>
 </div>
-<!--/banner-section-->
-<!-- Danh mục -->
-<div class="gallery agile" id="danhmuc">
-    <div class="container">
-        <h3 class="tittle"> Danh <span>Mục</span></h3>
-        <div class="agile_gallery_grids w3-agile">
-            <ul class="clearfix demo">
-                <li>
-                    <div class="gallery-grid1">
-                        <img src="~/Content/images/v5.jpg" alt="" class="img-responsive" />
-                        <div class="p-mask">
-                            <h4>Chợ tốt <span>Nhà</span></h4>
+<!-- //Slider -->
+<!-- content-starts-here -->
+<div class="main-content">
+    <div class="w3-categories">
+        <h3>Danh mục</h3>
+        <div class="container">
+            <div class="col-md-3">
+                <div class="focus-grid w3layouts-boder1">
+                    <a class="btn-8" href="categories.html">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-mobile"></i></div>
+                                <h4 class="clrchg">Mobiles</h4>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="gallery-grid1">
-                        <img src="~/Content/images/v1.jpg" alt="" class="img-responsive" />
-                        <div class="p-mask">
-                            <h4>Chợ tốt <span>Xe</span></h4>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="gallery-grid1">
-                        <img src="~/Content/images/v6.jpg" alt="" class="img-responsive" />
-                        <div class="p-mask">
-                            <h4>Đồ điện <span>Tử</span></h4>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="gallery-grid1">
-                        <img src="~/Content/images/v3.jpg" alt="" class="img-responsive" />
-                        <div class="p-mask">
-                            <h4>Thời trang, <span>Đồ dùng cá nhân</span></h4>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="gallery-grid1">
-                        <img src="~/Content/images/v7.jpg" alt="" class="img-responsive" />
-                        <div class="p-mask">
-                            <h4>Nội ngoại thất, <span>Đồ gia dụng</span></h4>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="gallery-grid1">
-                        <img src="~/Content/images/v2.jpg" alt="" class="img-responsive" />
-                        <div class="p-mask">
-                            <h4>Giải trí, Thể thao, <span>Sở thích</span></h4>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="gallery-grid1">
-                        <img src="~/Content/images/v8.jpg" alt="" class="img-responsive" />
-                        <div class="p-mask">
-                            <h4>Đồ văn phòng, <span>Công nông nghiệp</span></h4>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="gallery-grid1">
-                        <img src="~/Content/images/v4.jpg" alt="" class="img-responsive" />
-                        <div class="p-mask">
-                            <h4>Việc làm  <span>dịch vụ</span></h4>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-
-        </div>
-    </div>
-</div>
-<br />
-<!-- //danh mục -->
-<!--/price-section-->
-<div class="price-section" id="dangky">
-    <div class="container">
-        <div class="col-md-6 price">
-            <h3><span>Search For Home</span></h3>
-            <div class="reservation">
-                <div class="section_room">
-                    <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-                    <select id="country" onchange="change_country(this.value)" class="frm-field required">
-                        <option value="null">Location</option>
-                        <option value="null">Denmark</option>
-                        <option value="AX">Sweden</option>
-                        <option value="AX">New Zealand</option>
-                        <option value="AX">America</option>
-                        <option value="AX">Australia</option>
-                    </select>
-                </div>
-                <div class="section_room">
-                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                    <select id="country1" onchange="change_country(this.value)" class="frm-field required">
-                        <option value="null">Type of property</option>
-                        <option value="null">Property1</option>
-                        <option value="AX">Property2</option>
-                        <option value="AX">Property3</option>
-                        <option value="AX">Property4</option>
-                        <option value="AX">Property5</option>
-                    </select>
-                </div>
-                <div class="reservation-grids">
-                    <div class="reservation-grid-left">
-                        <div class="section_room">
-                            <span class="fa fa-bed" aria-hidden="true"> </span>
-                            <select id="country2" onchange="change_country(this.value)" class="frm-field required">
-                                <option value="null">Bedrooms</option>
-                                <option value="null">1</option>
-                                <option value="AX">2</option>
-                                <option value="AX">3</option>
-                                <option value="AX">4</option>
-                                <option value="AX">More</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="reservation-grid-right">
-                        <div class="section_room">
-                            <span class="fa fa-wheelchair-alt" aria-hidden="true"> </span>
-                            <select id="country3" onchange="change_country(this.value)" class="frm-field required">
-                                <option value="null">Baths</option>
-                                <option value="null">Any</option>
-                                <option value="AX">2</option>
-                                <option value="AX">3</option>
-                                <option value="AX">4</option>
-                                <option value="AX">More</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="reservation-grids">
-                    <div class="reservation-grid-left">
-                        <div class="section_room">
-                            <span class="glyphicon glyphicon-yen" aria-hidden="true"></span>
-                            <select id="country2" onchange="change_country(this.value)" class="frm-field required">
-                                <option value="null">Price From Min</option>
-                                <option value="null">No Minimum</option>
-                                <option value="AX">1000Yen</option>
-                                <option value="AX">3000Yen</option>
-                                <option value="AX">4000Yen</option>
-                                <option value="AX">5000Yen</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="reservation-grid-right">
-                        <div class="section_room">
-                            <span class="glyphicon glyphicon-yen" aria-hidden="true"></span>
-                            <select id="country3" onchange="change_country(this.value)" class="frm-field required">
-                                <option value="null">Price From Max</option>
-                                <option value="null">Any</option>
-                                <option value="AX">15000Yen</option>
-                                <option value="AX">25000Yen</option>
-                                <option value="AX">35000Yen</option>
-                                <option value="AX">More</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="keywords">
-                    <form action="#" method="post">
-                        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-                        <input type="text" name="Key Words" placeholder="Key Words" required="">
-                        <input type="submit" value="Search">
-                    </form>
+                    </a>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6 plat">
-            <div id="myCarousel1" class="carousel slide" data-ride="carousel" data-interval="2000" data-pause="hover">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel1" data-slide-to="1"></li>
-                    <li data-target="#myCarousel1" data-slide-to="2"></li>
-                </ol>
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <div class="serv-w3ls1">
-
-                            <img src="~/Content/images/v3.jpg" alt="w3ls" class="img-responsive">
-                            <span class="four">40,000$</span>
-                            <div class="rent-bottom">
-                                <h4>Nerima Sanam St, Tokyo,TM 3020</h4>
-                                <h5>For Rent</h5>
-                                <p>Etiam elit felis, porta ut massa in, consectetur<p>
-                                    <div class="rent-icons">
-                                        <h6 class="area">Area: 450m1</h6>
-                                        <div class="r-icons">
-                                            <ul class="icons-right">
-                                                <li><i class="fa fa-bed" aria-hidden="true"></i> 3</li>
-                                                <li><i class="fa fa-wheelchair-alt" aria-hidden="true"></i> 2</li>
-                                            </ul>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="serv-w3ls1">
-
-                            <img src="~/Content/images/v2.jpg" alt="w3ls" class="img-responsive">
-                            <span class="four">50,000$</span>
-                            <div class="rent-bottom">
-                                <h4>Nerima Sanam St, Tokyo,TM 3020</h4>
-                                <h5>For Rent</h5>
-                                <p>Etiam elit felis, porta ut massa in, consectetur<p>
-                                    <div class="rent-icons">
-                                        <h6 class="area">Area: 450m2</h6>
-                                        <div class="r-icons">
-                                            <ul class="icons-right">
-                                                <li><i class="fa fa-bed" aria-hidden="true"></i> 3</li>
-                                                <li><i class="fa fa-wheelchair-alt" aria-hidden="true"></i> 2</li>
-                                            </ul>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="serv-w3ls1">
-                            <img src="~/Content/images/v1.jpg" alt="w3ls" class="img-responsive">
-                            <span class="four">50,000$</span>
-                            <div class="rent-bottom">
-                                <h4>Nerima Sanam St, Tokyo,TM 3020</h4>
-                                <h5>For Rent</h5>
-                                <p>Etiam elit felis, porta ut massa in, consectetur<p>
-                                    <div class="rent-icons">
-                                        <h6 class="area">Area: 450m3</h6>
-                                        <div class="r-icons">
-                                            <ul class="icons-right">
-                                                <li><i class="fa fa-bed" aria-hidden="true"></i> 3</li>
-                                                <li><i class="fa fa-wheelchair-alt" aria-hidden="true"></i> 2</li>
-                                            </ul>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
+            <div class="col-md-3">
+                <div class="focus-grid w3layouts-boder2">
+                    <a class="btn-8" href="categories.html#parentVerticalTab2">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-laptop"></i></div>
+                                <h4 class="clrchg"> Electronics & Appliances</h4>
                             </div>
                         </div>
-                    </div>
-                    <div class="item">
-                        <div class="serv-w3ls1">
-                            <img src="~/Content/images/v4.jpg" alt="w3ls" class="img-responsive">
-                            <span class="four">30,000$</span>
-                            <div class="rent-bottom">
-                                <h4>Nerima Sanam St, Tokyo,TM 3020</h4>
-                                <h5>For Rent</h5>
-                                <p>Etiam elit felis, porta ut massa in, consectetur<p>
-                                    <div class="rent-icons">
-                                        <h6 class="area">Area: 450m4</h6>
-                                        <div class="r-icons">
-                                            <ul class="icons-right">
-                                                <li><i class="fa fa-bed" aria-hidden="true"></i> 3</li>
-                                                <li><i class="fa fa-wheelchair-alt" aria-hidden="true"></i> 2</li>
-                                            </ul>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                            </div>
-
-                        </div>
-                    </div>
+                    </a>
                 </div>
             </div>
-
+            <div class="col-md-3">
+                <div class="focus-grid w3layouts-boder3">
+                    <a class="btn-8" href="categories.html#parentVerticalTab3">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-car"></i></div>
+                                <h4 class="clrchg">Cars</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="focus-grid w3layouts-boder4">
+                    <a class="btn-8" href="categories.html#parentVerticalTab4">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-motorcycle"></i></div>
+                                <h4 class="clrchg">Bikes</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="focus-grid w3layouts-boder5">
+                    <a class="btn-8" href="categories.html#parentVerticalTab5">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-wheelchair"></i></div>
+                                <h4 class="clrchg">Furnitures</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="focus-grid w3layouts-boder6">
+                    <a class="btn-8" href="categories.html#parentVerticalTab6">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-paw"></i></div>
+                                <h4 class="clrchg">Pets</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="focus-grid w3layouts-boder7">
+                    <a class="btn-8" href="categories.html#parentVerticalTab7">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-book"></i></div>
+                                <h4 class="clrchg">Books, Sports & Hobbies</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="focus-grid w3layouts-boder8">
+                    <a class="btn-8" href="categories.html#parentVerticalTab8">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-asterisk"></i></div>
+                                <h4 class="clrchg">Fashion</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="focus-grid w3layouts-boder9">
+                    <a class="btn-8" href="categories.html#parentVerticalTab9">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-gamepad"></i></div>
+                                <h4 class="clrchg">Kids</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="focus-grid w3layouts-boder10">
+                    <a class="btn-8" href="categories.html#parentVerticalTab10">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-shield"></i></div>
+                                <h4 class="clrchg">Services</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="focus-grid w3layouts-boder11">
+                    <a class="btn-8" href="categories.html#parentVerticalTab11">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-at"></i></div>
+                                <h4 class="clrchg">Jobs</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="focus-grid w3layouts-boder12">
+                    <a class="btn-8" href="categories.html#parentVerticalTab12">
+                        <div class="focus-border">
+                            <div class="focus-layout">
+                                <div class="focus-image"><i class="fa fa-home"></i></div>
+                                <h4 class="clrchg">Real Estate</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="clearfix"></div>
         </div>
-        <div class="clearfix"> </div>
     </div>
 </div>
-<!--//price-section-->
