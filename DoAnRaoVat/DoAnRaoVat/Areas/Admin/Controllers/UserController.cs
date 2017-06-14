@@ -12,6 +12,7 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
     public class UserController : BaseController
     {
         // GET: Admin/User
+        //[HasCredential(RoleID = "VIEW_USER")]
         public ActionResult Index(string searchString, int page = 1, int pageSize = 10)
         {
             var dao = new UserDao();
@@ -21,11 +22,13 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
         }
 
         [HttpGet]
+        //[HasCredential(RoleID = "ADD_USER")]
         public ActionResult Create()
         {
             return View();
         }
 
+        //[HasCredential(RoleID = "EDIT_USER")]
         public ActionResult Edit(int id)
         {
             var user = new UserDao().ViewDetail(id);
@@ -33,36 +36,20 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        //[HasCredential(RoleID = "ADD_USER")]
         public ActionResult Create(User user)
         {
             if(ModelState.IsValid)
             {
                 var dao = new UserDao();
+                user.CreatedDate = DateTime.Now;
                 var encrytedMd5Pas = Encryptor.MD5Hash(user.Password);
                 user.Password = encrytedMd5Pas;
-
-                user.CreatedDate = DateTime.Now;
-                //var user = new User();
-                //user.Username = model.Username;
-                //user.Name = model.Name;
-                //user.Password = Encryptor.MD5Hash(model.Password);
-                //user.Phone = model.Phone;
-                //user.Email = model.Email;
-                //user.Address = model.Address;
-                //user.CreatedDate = DateTime.Now;
-                //user.Status = true;
-                //var result = dao.Insert(user);
-                //if (result > 0)
-                //{
-                //    ViewBag.Success = "Đăng ký thành công";
-                //    model = new RegisterModels();
-
-                //}
 
                 long id = dao.Insert(user);
                 if (id > 0)
                 {
-                    ViewBag.Success = "Đăng ký thành công";
+                    //SetAlert("");
                     return RedirectToAction("Index", "User");
                 }
                 else
@@ -70,10 +57,11 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
                     ModelState.AddModelError("","Thêm người dùng không thành công");
                 }
             }
-            return View("Index");
+            return View("Create");
         }
 
         [HttpPost]
+        //[HasCredential(RoleID = "EDIT_USER")]
         public ActionResult Edit(User user)
         {
             if (ModelState.IsValid)
@@ -94,9 +82,10 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
                     ModelState.AddModelError("", "Cập nhật người dùng không thành công");
                 }
             }
-            return View("Index");
+            return View("Edit");
         }
-      
+
+        //[HasCredential(RoleID = "DELETE_USER")]
         public ActionResult Delete(int id)
         {
             var dao = new UserDao();
@@ -104,6 +93,14 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        
+        //[HttpPost]
+        //public JsonResult ChangeStatus(long id)
+        //{
+        //    var result = new UserDao().ChangeStatus(id);
+        //    return Json(new
+        //    {
+        //        status = result
+        //    });
+        //}
     }
 }

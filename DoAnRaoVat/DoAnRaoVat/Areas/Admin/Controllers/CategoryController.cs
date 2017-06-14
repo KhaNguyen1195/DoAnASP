@@ -10,7 +10,7 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
 {
     public class CategoryController : BaseController
     {
-        // GET: Admin/ProductCategory
+        // GET: Admin/Category
         public ActionResult Index(string searchString, int page = 1, int pageSize = 5)
         {
             var dao = new CategoryDao();
@@ -31,7 +31,7 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var dao = new Model.Dao.CategoryDao();
+                var dao = new CategoryDao();
                 category.CreatedDate = DateTime.Now;
                 long id = dao.Insert(category);
                 if (id > 0)
@@ -43,7 +43,7 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
                     ModelState.AddModelError("", "Thêm danh mục không thành công");
                 }
             }
-            return View("Index");
+            return View("Create");
         }
 
         public ActionResult Edit(int id)
@@ -69,7 +69,7 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
                     ModelState.AddModelError("", "Cập nhật danh mục không thành công");
                 }
             }
-            return View("Index");
+            return View("Edit");
         }
 
         public ActionResult Delete(int id)
@@ -79,6 +79,6 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        DoAnASPDBContext db = new DoAnASPDBContext();
+        
     }
 }

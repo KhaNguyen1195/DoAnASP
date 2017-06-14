@@ -42,7 +42,7 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
                     ModelState.AddModelError("", "Thêm khu vực không thành công");
                 }
             }
-            return View("Index");
+            return View("Create");
         }
 
         public ActionResult Edit(int id)
@@ -67,7 +67,7 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
                     ModelState.AddModelError("", "Cập nhật khu vực không thành công");
                 }
             }
-            return View("Index");
+            return View("Edit");
         }
 
         public ActionResult Delete(int id)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model.EF;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -11,7 +12,9 @@ namespace DoAnRaoVat.Models
     {
         
         public long ID { get; set; }
-        
+
+        public string UserGroupID { get; set; }
+
         public string Username { get; set; }
 
         public string Password { get; set; }
@@ -25,5 +28,6 @@ namespace DoAnRaoVat.Models
         public string Email { get; set; }
 
         public string Phone { get; set; }
+        public virtual UserGroup UserGroup { get; set; }
     }
 }

@@ -49,6 +49,7 @@ namespace Model.Dao
             try
             {
                 var city = db.Cities.Find(entity.ID);
+                city.Code = entity.Code;
                 city.Name = entity.Name;
                 city.Status = entity.Status;
                 db.SaveChanges();
