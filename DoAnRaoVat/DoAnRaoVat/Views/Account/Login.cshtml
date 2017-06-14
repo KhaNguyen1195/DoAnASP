@@ -8,63 +8,158 @@
 
 <html>
 <head>
-
-    <title>ĐĂNG NHẬP TRANG CHỦ</title>
-
-    <!-- Meta-Tags -->
+    <title>ĐĂNG NHẬP</title>
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css"><!-- bootstrap-CSS -->
+    <link rel="stylesheet" href="~/Content/css/bootstrap-select.css"><!-- bootstrap-select-CSS -->
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" media="all" /><!-- style.css -->
+    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css" /><!-- fontawesome-CSS -->
+    <link rel="stylesheet" href="~/Content/css/menu_sideslide.css" type="text/css" media="all"><!-- Navigation-CSS -->
+    <!-- meta tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <!-- //Meta-Tags -->
+    <!-- //meta tags -->
+    <!--fonts-->
+    <link href='//fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <!--//fonts-->
+    <!-- js -->
+    <script type="text/javascript" src="~/Content/js/jquery.min.js"></script>
+    <!-- js -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="~/Content/js/bootstrap.js"></script>
+    <script src="~/Content/js/bootstrap-select.js"></script>
 
-    <link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
-
-    <!-- Style -->
-    <link rel="stylesheet" href="~/Content/css/login.css" type="text/css" media="all">
-
-    <!-- Fonts -->
-    <link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-    <!-- //Fonts -->
+    <!-- language-select -->
+    <script type="text/javascript" src="~/Content/js/jquery.leanModal.min.js"></script>
+    <link href="~/Content/css/jquery.uls.css" rel="stylesheet" />
+    <link href="~/Content/css/jquery.uls.grid.css" rel="stylesheet" />
+    <link href="~/Content/css/jquery.uls.lcd.css" rel="stylesheet" />
+    <!-- Source -->
+    <script src="~/Content/js/jquery.uls.data.js"></script>
+    <script src="~/Content/js/jquery.uls.data.utils.js"></script>
+    <script src="~/Content/js/jquery.uls.lcd.js"></script>
+    <script src="~/Content/js/jquery.uls.languagefilter.js"></script>
+    <script src="~/Content/js/jquery.uls.regionfilter.js"></script>
+    <script src="~/Content/js/jquery.uls.core.js"></script>
 
 </head>
 <body>
-    @using (Html.BeginForm()) 
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
 
-        <h1>ĐĂNG NHẬP</h1>
-
-        <div class="w3layoutscontaineragileits">
-            <h2>Đăng nhập tại đây</h2>
-
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-                    @Html.TextBoxFor(model => model.UserName, new { @placeholder = "TÊN TÀI KHOẢN" })
-                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+        <section>
+            <div id="agileits-sign-in-page" class="sign-in-wrapper">
+                <div class="agileinfo_signin">
+                    <h3>ĐĂNG NHẬP</h3>
+                    <form>
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
 
-                    @Html.PasswordFor(model => model.Password, new { @placeholder = "MẬT KHẨU" })
-                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                        @Html.TextBoxFor(model => model.UserName, new { @placeholder = "Tên tài khoản" })
 
-            <ul class="agileinfotickwthree">
-                <li>
-                    <label id="brand1">
-                        @Html.EditorFor(model => model.RemmemberMe)
-                        @Html.ValidationMessageFor(model => model.RemmemberMe, "", new { @class = "text-danger" })
-                        <label for="brand1"><span></span>Remember me</label>
-                    </label>
-                    <a href="#">Quên mật khẩu?</a>
-                </li>
-            </ul>
 
-            <div class="aitssendbuttonw3ls">
-                <input type="submit" value="Đăng nhập"/>
-                <p> Đăng ký tài khoản <span>→</span> <a class="w3_play_icon1" href="@Url.Action("Register","Account")"> Click tại đây</a></p>
-                <div class="clear"></div>
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        @Html.PasswordFor(model => model.Password, new { @placeholder = "Mật khẩu" })
+
+                        <div class="forgot-grid">
+                            <label class="checkbox">
+                                @Html.CheckBoxFor(model => model.RemmemberMe) Remember me
+                                @*@Html.ValidationMessageFor(model => model.RemmemberMe, "", new { @class = "text-danger" })*@
+                            </label>
+                            <div class="forgot">
+                                <a href="#" data-toggle="modal" data-target="#myModal2">Quên mật khẩu?</a>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+
+                        <input type="submit" value="Đăng nhập" />
+                        <input type="submit" value="Đăng nhập bằng Facebook" style="background-color:#3b5998;"/>
+
+                    </form>
+                    <h6> Bạn không phải thành viên? <a href="@Url.Action("Register","Account")">Đăng ký ngay</a> </h6>
+                    <br />
+                    <p> Trở về trang chủ <span>→</span> <a href="@Url.Action("Index","Home")"> Bấm vào đây</a></p>
+                </div>
             </div>
-        </div>
+        </section>
     }
-    
-    <script type="text/javascript" src="~/Content/js/jquery-2.1.4.min.js"></script>
+
+    <!-- //sign in form -->
+    <!-- Navigation-Js-->
+    <script type="text/javascript" src="~/Content/js/main.js"></script>
+    <script type="text/javascript" src="~/Content/js/classie.js"></script>
+    <!-- //Navigation-Js-->
+    <!-- js -->
+    <script type="text/javascript" src="~/Content/js/jquery.min.js"></script>
+    <!-- js -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="~/Content/js/bootstrap.js"></script>
+    <script src="~/Content/js/bootstrap-select.js"></script>
+    <script>
+        $(document).ready(function () {
+            var mySelect = $('#first-disabled2');
+
+            $('#special').on('click', function () {
+                mySelect.find('option:selected').prop('disabled', true);
+                mySelect.selectpicker('refresh');
+            });
+
+            $('#special2').on('click', function () {
+                mySelect.find('option:disabled').prop('disabled', false);
+                mySelect.selectpicker('refresh');
+            });
+
+            $('#basic2').selectpicker({
+                liveSearch: true,
+                maxOptions: 1
+            });
+        });
+    </script>
+    <!-- language-select -->
+    <script type="text/javascript" src="~/Content/js/jquery.leanModal.min.js"></script>
+    <link href="~/Content/css/jquery.uls.css" rel="stylesheet" />
+    <link href="~/Content/css/jquery.uls.grid.css" rel="stylesheet" />
+    <link href="~/Content/css/jquery.uls.lcd.css" rel="stylesheet" />
+    <!-- Source -->
+    <script src="~/Content/js/jquery.uls.data.js"></script>
+    <script src="~/Content/js/jquery.uls.data.utils.js"></script>
+    <script src="~/Content/js/jquery.uls.lcd.js"></script>
+    <script src="~/Content/js/jquery.uls.languagefilter.js"></script>
+    <script src="~/Content/js/jquery.uls.regionfilter.js"></script>
+    <script src="~/Content/js/jquery.uls.core.js"></script>
+    <!-- //language-select -->
+    <script type="text/javascript" src="~/Content/js/jquery.flexisel.js"></script><!-- flexisel-js -->
+    <script type="text/javascript">
+        $(window).load(function () {
+            $("#flexiselDemo3").flexisel({
+                visibleItems: 1,
+                animationSpeed: 1000,
+                autoPlay: true,
+                autoPlaySpeed: 5000,
+                pauseOnHover: true,
+                enableResponsiveBreakpoints: true,
+                responsiveBreakpoints: {
+                    portrait: {
+                        changePoint: 480,
+                        visibleItems: 1
+                    },
+                    landscape: {
+                        changePoint: 640,
+                        visibleItems: 1
+                    },
+                    tablet: {
+                        changePoint: 768,
+                        visibleItems: 1
+                    }
+                }
+            });
+
+        });
+    </script>
+    <!-- here stars scrolling icon -->
 </body>
+
 </html>

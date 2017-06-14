@@ -42,6 +42,7 @@
                     <div class="form-control">
                         @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "header"})
                         @Html.TextBoxFor(model => model.Username, new { @class = "text-form", @placeholder = "Nhập vào tên đăng nhập" })
+                        <div class="clear"></div>
                         @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
                         <div class="clear"></div>
                     </div>
@@ -49,6 +50,7 @@
                     <div class="form-control">
                         @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "header" })
                         @Html.PasswordFor(model => model.Password, new { @class = "text-form", @placeholder = "Nhập mật khẩu" })
+                        <div class="clear"></div>
                         @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                         <div class="clear"></div>
                     </div>
@@ -56,6 +58,7 @@
                     <div class="form-control">
                         @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "header" })
                         @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "text-form", @placeholder = "Nhập lại mật khẩu" })
+                        <div class="clear"></div>
                         @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
                         <div class="clear"></div>
                     </div>
@@ -63,6 +66,7 @@
                     <div class="form-control">
                         @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "header" })
                         @Html.TextBoxFor(model => model.Name, new { @class = "text-form", @placeholder = "Nhập vào Họ và tên" })
+                        <div class="clear"></div>
                         @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                         <div class="clear"></div>
                     </div>
@@ -70,6 +74,7 @@
                     <div class="form-control">
                         @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "header" })
                         @Html.TextBoxFor(model => model.Address, new { @class = "text-form", @placeholder = "Nhập vào địa chỉ" })
+                        <div class="clear"></div>
                         @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
                         <div class="clear"></div>
                     </div>
@@ -77,6 +82,7 @@
                     <div class="form-control">
                         @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "header" })
                         @Html.TextBoxFor(model => model.Email, new { @class = "text-form", @placeholder = "Mail@example.com" })
+                        <div class="clear"></div>
                         @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                         <div class="clear"></div>
                     </div>
@@ -84,6 +90,7 @@
                     <div class="form-control">
                         @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "header" })
                         @Html.TextBoxFor(model => model.Phone, new { @class = "text-form", @placeholder = "Nhập số điện thoại" })
+                        <div class="clear"></div>
                         @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
                         <div class="clear"></div>
                     </div>
@@ -91,8 +98,9 @@
                         <p class="be-wls">Nhập vào mã xác nhận</p>
                         @Html.Captcha(registerCaptcha)
                         @Html.TextBox("CaptchaCode")
-                        
-                        
+                        <div class="clear"></div>
+                        @Html.ValidationMessageFor(model => model.CaptchaCode, "", new { @class = "text-danger" })
+                        <div class="clear"></div>
                     </div>
                     <br />
                     

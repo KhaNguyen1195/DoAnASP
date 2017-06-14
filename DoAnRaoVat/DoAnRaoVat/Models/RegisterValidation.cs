@@ -33,10 +33,18 @@ namespace DoAnRaoVat.Models
 
         [Display(Name = "Email")]
         [Required(ErrorMessage = "Yêu cầu nhập Email")]
+        [RegularExpression(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                            @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                            @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$",
+                            ErrorMessage = "Email không hợp lệ!")]
         public string Email { get; set; }
 
         [Display(Name = "Số điện thoại")]
         [Required(ErrorMessage = "Yêu cầu nhập Số điện thoại")]
         public string Phone { get; set; }
+
+        [Display(Name = "Mã xác nhận")]
+        [Required(ErrorMessage = "Yêu cầu nhập vào mã xác nhận")]
+        public string CaptchaCode { get; set; }
     }
 }

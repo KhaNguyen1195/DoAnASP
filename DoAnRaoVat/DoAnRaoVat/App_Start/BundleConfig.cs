@@ -25,7 +25,7 @@ namespace DoAnRaoVat
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/css/bootstrap.css", "~/Content/font-awesome.min.css",
-                      "~/Content/css/style.css", "~/Content/css/zoomslider.css"));
+                      "~/Content/css/style.css", "~/Content/css/zoomslider.css", "~/Content/css/login.css"));
             BundleTable.EnableOptimizations = true;
         }
     }
