@@ -25,7 +25,7 @@
                             <h3><strong>Danh sách các phản hồi</strong></h3>
                         </div>
                         <!--Tìm kiếm--->
-                        <div class="col-sm-offset-3 col-sm-3">
+                        <div class="col-sm-offset-5 col-sm-3">
                             <form class="form-group" role="form">
                                 @using (Html.BeginForm("Index", "FeedBack", FormMethod.Get))
                                 {
@@ -41,9 +41,9 @@
                             </form>
                         </div>
                         <!--Tìm kiếm --->
-                        <div class="button-ds">
+                        @*<div class="button-ds">
                             <a class="btn btn-primary btn-sm" href="@Url.Action("Create","FeedBack")">Thêm mới</a>
-                        </div>
+                        </div>*@
                     </header>
                     <div class="table-responsive">
                         <table class="table table-bordered">
