@@ -62,6 +62,7 @@
     <Compile Include="Dao\CityDao.cs" />
     <Compile Include="Dao\FeedBackDao.cs" />
     <Compile Include="Dao\CategoryDao.cs" />
+    <Compile Include="Dao\NewsDao.cs" />
     <Compile Include="Dao\ProductDao.cs" />
     <Compile Include="Dao\UserDao.cs" />
     <Compile Include="EF\Category.cs" />
@@ -71,13 +72,23 @@
     <Compile Include="EF\News.cs" />
     <Compile Include="EF\Product.cs" />
     <Compile Include="EF\User.cs" />
+    <Compile Include="EF\UserGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validation\CategoryMetaData.cs" />
+    <Compile Include="Validation\CityMetaData.cs" />
+    <Compile Include="Validation\FeedbackMetaData.cs" />
+    <Compile Include="Validation\UserMetaData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{6659CE74-5159-4CB4-8AA5-51FAF36EB2AC}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

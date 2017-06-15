@@ -7,7 +7,8 @@
     <link rel="shortcut icon" href="img/favicon.png">
 
     <title>Admin Website Rao Vặt</title>
-
+    <script src="~/Areas/Admin/Content/ckeditor/ckeditor.js"></script>
+    @*<script src="~/Areas/Admin/Content/ckfinder/ckfinder.js"></script>*@
     <!-- Bootstrap CSS -->
     <link href="~/Areas/Admin/Content/css/bootstrap.min.css" rel="stylesheet">
     <!-- bootstrap theme -->
@@ -122,6 +123,13 @@
                     </li>
 
                     <li>
+                        <a class="" href="@Url.Action("Index","News")">
+                            <i class="icon_map_alt"></i>
+                            <span>Quản lý bài đăng</span>
+                        </a>
+                    </li>
+
+                    <li>
                         <a class="" href="@Url.Action("Index","FeedBack")">
                             <i class="icon_comment_alt"></i>
                             <span>Phản hồi ý kiến</span>
@@ -141,7 +149,8 @@
     </section>
     <!-- container section start -->
     <!-- javascripts -->
-    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    @*<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>*@
+    <script src="~/Areas/Admin/Content/js/jquery.unobtrusive-ajax.min.js"></script>
     <script src="~/Areas/Admin/Content/js/jquery.js"></script>
     <script src="~/Areas/Admin/Content/js/jquery-ui-1.10.4.min.js"></script>
     <script src="~/Areas/Admin/Content/js/jquery-1.8.3.min.js"></script>
