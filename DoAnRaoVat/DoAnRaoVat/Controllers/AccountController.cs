@@ -45,7 +45,7 @@ namespace DoAnRaoVat.Controllers
                 {
                     var user = new User();
                     user.Username = model.Username;
-                    user.UserGroupID = "Member";
+                    user.UserGroupID = model.UserGroupID;
                     user.Name = model.Name;
                     user.Password = Encryptor.MD5Hash(model.Password);
                     user.Phone = model.Phone;
@@ -57,7 +57,8 @@ namespace DoAnRaoVat.Controllers
                     if (result > 0)
                     {
                         ViewBag.Success = "Đăng ký thành công";
-                        model = new RegisterModels();
+                        //model = new RegisterModels();
+                        ModelState.Clear();
 
                     }
                     else
@@ -69,10 +70,13 @@ namespace DoAnRaoVat.Controllers
             return View(model);
         }
 
+
         public ActionResult Login()
         {
             return View();
         }
+
+
         [HttpPost]
         public ActionResult Login(LoginModels model)
         {
@@ -87,7 +91,7 @@ namespace DoAnRaoVat.Controllers
                     userSession.UserName = user.Username;
                     userSession.UserID = user.ID;
                     Session.Add(CommonConstants.USER_SESSION, userSession);
-                    return RedirectToAction("Index","Home");
+                    return RedirectToAction("Index", "Home");
                 }
                 else if (result == 0)
                 {

@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Website Rao Vặt</title>
+    <title>WEBSITE RAO VẶT</title>
     <link rel="stylesheet" href="~/Content/css/bootstrap.min.css"><!-- bootstrap-CSS -->
     <link rel="stylesheet" href="~/Content/css/bootstrap-select.css"><!-- bootstrap-select-CSS -->
     <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" media="all" /><!-- style.css -->
@@ -50,9 +50,6 @@
     <header>
         <div class="w3ls-header">
             <!--header-one-->
-            @*<div class="w3ls-header-left">
-                    <p><a href="mobileapp.html"><i class="fa fa-download" aria-hidden="true"></i>Download Mobile App </a></p>
-                </div>*@
             <div class="w3ls-header-right">
                 <ul>
                     <li class="dropdown head-dpdn">
@@ -76,7 +73,9 @@
                             <a href="@Url.Action("Login", "Account")"><i class="glyphicon glyphicon-log-in"></i> Đăng nhập</a>
                         </li>
                     }
-
+                    <li class="dropdown head-dpdn">
+                        <a href="@Url.Action("Create", "FeedBack")"><i class="fa fa-user" aria-hidden="true"></i> Phản hồi</a>
+                    </li>
                     <li class="dropdown head-dpdn">
                         <div class="header-right">
                             <!-- Large modal -->
@@ -265,7 +264,7 @@
                     </ul>
                 </div>
                 <div class="copyrights">
-                    <p> © 2017 Website Rao vặt. All Rights Reserved | Design by Nguyên & Phi.</p>
+                    <p> © 2016 Resale. All Rights Reserved | Design by  <a href="http://w3layouts.com/"> W3layouts</a></p>
                 </div>
                 <div class="clearfix"></div>
             </div>

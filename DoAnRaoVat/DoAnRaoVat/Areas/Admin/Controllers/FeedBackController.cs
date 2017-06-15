@@ -31,7 +31,6 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 var dao = new FeedBackDao();
-                feedback.CreatedDate = DateTime.Now;
                 long id = dao.Insert(feedback);
                 if (id > 0)
                 {

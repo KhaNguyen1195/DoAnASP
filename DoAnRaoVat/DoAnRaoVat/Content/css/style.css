@@ -1,4 +1,4 @@
-/*--
+﻿/*--
 Author: W3layouts
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
@@ -1060,9 +1060,11 @@ i.real-estate {
 .agileinfo_signin input[type="submit"]:hover{
 	background:#060e56;
 }
+
 .forgot-grid {
     margin-top: 0em;
 }
+
 .agileinfo_signin label.checkbox {
     float: left;
     margin: 0;

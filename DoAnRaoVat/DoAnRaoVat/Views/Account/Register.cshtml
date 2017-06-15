@@ -101,8 +101,9 @@
                         @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
                         <div class="clear"></div>
                     </div>
+
                     <div class="agile-w3ls">
-                        <p class="be-wls">Nhập vào mã xác nhận</p>
+                        <p class="be-wls" style="margin-top:0px;">Nhập vào mã xác nhận</p>
                         @Html.Captcha(registerCaptcha)
                         @Html.TextBox("CaptchaCode")
                         <div class="clear"></div>
@@ -115,6 +116,7 @@
                         <input type="submit" value="Đăng ký" class="register" />
                         <a href="@Url.Action("Index","Home")" type="button" style="color:white;">Quay lại trang chủ</a>
                     </div>
+
                 </form>
             </div>
         </div>

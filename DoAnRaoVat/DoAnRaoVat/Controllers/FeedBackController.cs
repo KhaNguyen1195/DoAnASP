@@ -16,12 +16,14 @@ namespace DoAnRaoVat.Controllers
             return View();
         }
 
+        
         [HttpGet]
         public ActionResult Create()
         {
             return View();
         }
 
+        
         [HttpPost]
         public ActionResult Create(FeedBack feedback)
         {
@@ -34,6 +36,7 @@ namespace DoAnRaoVat.Controllers
                 if (id > 0)
                 {
                     ViewBag.Success = "Phản hồi thành công. Cám ơn bạn đã đóng góp ý kiến.";
+                    ModelState.Clear();
                 }
                 else
                 {
