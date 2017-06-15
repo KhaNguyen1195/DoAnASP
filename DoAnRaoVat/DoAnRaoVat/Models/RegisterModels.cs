@@ -30,6 +30,6 @@ namespace DoAnRaoVat.Models
         public string Phone { get; set; }
 
         public string CaptchaCode { get; set; }
-        public virtual UserGroup UserGroup { get; set; }
+        //public virtual UserGroup UserGroup { get; set; }
     }
 }
