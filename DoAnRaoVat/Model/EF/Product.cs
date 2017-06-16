@@ -23,7 +23,7 @@ namespace Model.EF
         [StringLength(50)]
         public string Name { get; set; }
 
-        public bool Status { get; set; }
+        public bool? Status { get; set; }
 
         public long? Category_ID { get; set; }
 

@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
     <!-- bootstrap-select-CSS -->
     <link rel="stylesheet" href="~/Content/css/bootstrap-select.css">
-    <!-- style.css -->
-    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" media="all" /> 
+    <!-- Bootstrap social -CSS -->
+    <link href="~/Content/css/bootstrap-social.css" rel="stylesheet" />
     <!-- fontawesome-CSS -->
-    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css" />    
+    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css" />
     <!-- Navigation-CSS -->
     <link rel="stylesheet" href="~/Content/css/menu_sideslide.css" type="text/css" media="all">
     <!-- meta tags -->
@@ -47,6 +47,8 @@
     <script src="~/Content/js/jquery.uls.languagefilter.js"></script>
     <script src="~/Content/js/jquery.uls.regionfilter.js"></script>
     <script src="~/Content/js/jquery.uls.core.js"></script>
+    <!-- style.css -->
+    <link href="~/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
 
 </head>
 <body>
@@ -82,8 +84,15 @@
                             <div class="clearfix"> </div>
                         </div>
 
-                        <input type="submit" value="Đăng nhập" />
-                        <input type="submit" value="Đăng nhập bằng Facebook" style="background-color:#3b5998;" />
+                        <input type="submit" value="Đăng nhập" style="margin-bottom:10px;" />
+                        <a href="/Account/LoginFacebook" class="btn btn-block btn-social btn-facebook">
+                            <i class="fa fa-facebook"></i> Đăng nhập bằng Facebook
+                        </a>
+
+                        <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="continue_with"
+                              data-show-faces="true" data-auto-logout-link="true" data-use-continue-as="true" style="margin-top:10px;">
+
+                        </div>
 
                     </form>
                     <h6> Bạn không phải thành viên? <a href="@Url.Action("Register","Account")">Đăng ký ngay</a> </h6>
@@ -95,6 +104,16 @@
         </section>
     }
 
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.9&appId=1201011530044710";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
     <!-- //sign in form -->
     <!-- Navigation-Js-->
     <script type="text/javascript" src="~/Content/js/main.js"></script>

@@ -42,7 +42,8 @@
                         <br />
                         @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger", @style = "color:red;font-size:15px;" })
                         @Html.TextAreaFor(model => model.Content, new { @placeholder = "Nội dung phản hồi" })
-                        <input type="submit" value="Gửi" />
+                        <input type="submit" value="Gửi" /> &nbsp;
+                        <a href="@Url.Action("Index","Home")" type="button"> Quay lại trang chủ</a>
                     </form>
                 </div>
             </div>

@@ -72,11 +72,6 @@ namespace Model.Dao
                 db.SaveChanges();
             return true;
         }
-
-        public List<City> LissAllCity()
-        {
-            return db.Cities.Where(x => x.Status == true).ToList();
-        }
-
+      
     }
 }

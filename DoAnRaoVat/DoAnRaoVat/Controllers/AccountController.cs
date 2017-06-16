@@ -8,23 +8,26 @@ using Model.Dao;
 using DoAnRaoVat.Common;
 using DoAnRaoVat.Models;
 using BotDetect.Web.Mvc;
+using Facebook;
+using System.Configuration;
 
 namespace DoAnRaoVat.Controllers
 {
     public class AccountController : Controller
     {
+
         // GET: Account
         public ActionResult Index()
         {
             return View();
         }
 
+        /*------------ Đăng ký -----------------*/
         public ActionResult Register()
         {
             return View();
         }
 
-        
 
         [HttpPost]
         [CaptchaValidation("CaptchaCode", "registerCaptcha", "Mã xác nhận không đúng!")]
@@ -57,8 +60,7 @@ namespace DoAnRaoVat.Controllers
                     if (result > 0)
                     {
                         ViewBag.Success = "Đăng ký thành công";
-                        //model = new RegisterModels();
-                        ModelState.Clear();
+                        model = new RegisterModels();
 
                     }
                     else
@@ -67,9 +69,10 @@ namespace DoAnRaoVat.Controllers
                     }
                 }
             }
+            ModelState.Clear();
             return View(model);
         }
-
+        /*------------ Đăng ký -----------------*/
 
         public ActionResult Login()
         {
@@ -113,11 +116,86 @@ namespace DoAnRaoVat.Controllers
             return View(model);
         }
 
+        /*------------ Đăng xuất  -----------------*/
         public ActionResult Logout()
         {
             Session[CommonConstants.USER_SESSION] = null;
             return Redirect("/");
         }
+        /*------------ Đăng xuất -----------------*/
+
+        /*------------ Đăng nhập bằng Facebook  -----------------*/
+        private Uri RedirectUri
+        {
+            get
+            {
+                var urlBuilder = new UriBuilder(Request.Url);
+                urlBuilder.Query = null;
+                urlBuilder.Fragment = null;
+                urlBuilder.Path = Url.Action("FacebookCallback");
+                return urlBuilder.Uri;
+            }
+        }
+
+        public ActionResult LoginFacebook()
+        {
+            var fb = new FacebookClient();
+            var loginUrl = fb.GetLoginUrl(new
+            {
+                client_id = ConfigurationManager.AppSettings["FbAppId"],
+                client_secret = ConfigurationManager.AppSettings["FbAppSecret"],
+                redirect_uri = RedirectUri.AbsoluteUri,
+                response_type = "code",
+                scope = "email"
+            });
+            return Redirect(loginUrl.AbsoluteUri);
+        }
+
+        public ActionResult FacebookCallback(string code)
+        {
+            var fb = new FacebookClient();
+            dynamic result = fb.Post("oauth/access_token", new
+            {
+                client_id = ConfigurationManager.AppSettings["FbAppId"],
+                client_secret = ConfigurationManager.AppSettings["FbAppSecret"],
+                redirect_uri = RedirectUri.AbsoluteUri,
+                code = code
+
+            });
+
+            var accessToken = result.access_token;
+            if (!string.IsNullOrEmpty(accessToken))
+            {
+                fb.AccessToken = accessToken;
+                dynamic me = fb.Get("me?fields=first_name,middle_name,last_name,id,email");
+                string email = me.email;
+                string username = me.email;
+                string firtname = me.first_name;
+                string middlename = me.middle_name;
+                string lastname = me.last_name;
+
+                var user = new User();
+                user.Email = email;
+                user.Username = email;
+                user.Status = true;
+                user.Name = lastname + " " + firtname + " " + middlename;
+                user.CreatedDate = DateTime.Now;
+                var resultInsert = new UserDao().InsertForFacebook(user);
+                if (resultInsert > 0)
+                {
+                    var userSession = new UserLogin();
+                    userSession.UserName = user.Username;
+                    userSession.UserID = user.ID;
+                    userSession.Name = user.Name;
+                    Session.Add(CommonConstants.USER_SESSION, userSession);
+
+                }
+
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
+        /*------------ Đăng nhập bằng Facebook -----------------*/
 
     }
 }

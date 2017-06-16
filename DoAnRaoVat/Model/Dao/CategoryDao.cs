@@ -39,7 +39,7 @@ namespace Model.Dao
             IQueryable<Category> model = db.Categories;
             if (!string.IsNullOrEmpty(searchString))
             {
-                model = model.Where(x => x.Name.Contains(searchString) || x.Code.Contains(searchString));
+                model = model.Where(x => x.Name.Contains(searchString));
             }
             return model.OrderByDescending(x => x.CreatedDate).ToPagedList(page, pageSize);
         }
@@ -49,7 +49,9 @@ namespace Model.Dao
             try
             {
                 var category = db.Categories.Find(entity.ID);
+                category.Code = entity.Code;
                 category.Name = entity.Name;
+                category.ModifiedDate =(DateTime.Now);
                 category.Status = entity.Status;
                 db.SaveChanges();
                 return true;
@@ -71,11 +73,6 @@ namespace Model.Dao
             db.Categories.Remove(category);
             db.SaveChanges();
             return true;
-        }
-
-        public List<Category> LissAll()
-        {
-            return db.Categories.Where(x => x.Status == true).ToList();
         }
     }
 }

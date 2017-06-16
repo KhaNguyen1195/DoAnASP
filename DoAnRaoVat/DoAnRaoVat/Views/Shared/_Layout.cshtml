@@ -61,7 +61,7 @@
                     @if (session != null)
                     {
                         <li class="dropdown head-dpdn">
-                            <a><span class="glyphicon glyphicon-user"></span> @session.UserName</a>
+                            <a><span class="glyphicon glyphicon-user"></span> @session.Name</a>
                         </li>
                         <li class="dropdown head-dpdn">
                             <a><i class="glyphicon glyphicon-log-out"></i> @Html.ActionLink("Thoát", "Logout", "Account")</a>
@@ -74,7 +74,7 @@
                         </li>
                     }
                     <li class="dropdown head-dpdn">
-                        <a href="@Url.Action("Create", "FeedBack")"><i class="fa fa-user" aria-hidden="true"></i> Phản hồi</a>
+                        <a href="@Url.Action("Create", "FeedBack")"><i class="glyphicon glyphicon-comment" aria-hidden="true"></i> Phản hồi</a>
                     </li>
                     <li class="dropdown head-dpdn">
                         <div class="header-right">

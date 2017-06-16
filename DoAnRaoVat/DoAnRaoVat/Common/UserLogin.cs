@@ -11,6 +11,7 @@ namespace DoAnRaoVat
         public long UserID { set; get; }
         public string Phone { set; get; }
         public string UserName { get; set; }
+        public string Name { get; set; }
         public string UserGroupID { get; set; }
     }
 }

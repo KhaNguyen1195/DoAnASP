@@ -30,6 +30,7 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
                     userSession.UserName = user.Username;
                     userSession.UserID = user.ID;
                     userSession.UserGroupID = user.UserGroupID;
+                    userSession.Name = user.Name;
                     //var listCredentials = dao.GetListCredential(model.UserName);
                     //Session.Add(CommonConstants.USER_SESSION, listCredentials);
                     Session.Add(CommonConstants.USER_SESSION, userSession);
