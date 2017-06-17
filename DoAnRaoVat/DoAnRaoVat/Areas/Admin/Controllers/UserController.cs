@@ -12,7 +12,6 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
     public class UserController : BaseController
     {
         // GET: Admin/User
-        //[HasCredential(RoleID = "VIEW_USER")]
         public ActionResult Index(string searchString, int page = 1, int pageSize = 10)
         {
             var dao = new UserDao();
@@ -21,22 +20,21 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
             return View(model);
         }
 
+        public void SetViewBag(string selectedId = null)
+        {
+            var dao = new UserGroupDao();
+            ViewBag.UserGroupID = new SelectList(dao.ListAll(), "ID", "Name", selectedId);
+        }
+
         [HttpGet]
-        //[HasCredential(RoleID = "ADD_USER")]
         public ActionResult Create()
         {
+            //SetViewBag();
             return View();
         }
-
-        //[HasCredential(RoleID = "EDIT_USER")]
-        public ActionResult Edit(int id)
-        {
-            var user = new UserDao().ViewDetail(id);
-            return View(user);
-        }
+        
 
         [HttpPost]
-        //[HasCredential(RoleID = "ADD_USER")]
         public ActionResult Create(User user)
         {
             if(ModelState.IsValid)
@@ -57,11 +55,17 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
                     ModelState.AddModelError("","Thêm người dùng không thành công");
                 }
             }
+            //SetViewBag();
             return View("Create");
+        }
+        public ActionResult Edit(int id)
+        {
+            var user = new UserDao().ViewDetail(id);
+            SetViewBag(user.UserGroupID);
+            return View(user);
         }
 
         [HttpPost]
-        //[HasCredential(RoleID = "EDIT_USER")]
         public ActionResult Edit(User user)
         {
             if (ModelState.IsValid)
@@ -82,10 +86,10 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
                     ModelState.AddModelError("", "Cập nhật người dùng không thành công");
                 }
             }
+            SetViewBag(user.UserGroupID);
             return View("Edit");
         }
-
-        //[HasCredential(RoleID = "DELETE_USER")]
+        
         public ActionResult Delete(int id)
         {
             var dao = new UserDao();
@@ -93,14 +97,16 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        //[HttpPost]
-        //public JsonResult ChangeStatus(long id)
-        //{
-        //    var result = new UserDao().ChangeStatus(id);
-        //    return Json(new
-        //    {
-        //        status = result
-        //    });
-        //}
+
+        /*-------------- Thay đổi trạng thái--------------------*/
+        [HttpPost]
+        public JsonResult ChangeStatus(long id)
+        {
+            var result = new UserDao().ChangeStatus(id);
+            return Json(new
+            {
+                status = result
+            });
+        }
     }
 }

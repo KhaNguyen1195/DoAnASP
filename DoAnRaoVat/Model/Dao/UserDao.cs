@@ -51,6 +51,7 @@ namespace Model.Dao
                 }
                 user.Username = entity.Username;
                 user.Name = entity.Name;
+                user.UserGroupID = entity.UserGroupID;
                 user.Address = entity.Address;
                 user.Email = entity.Email;
                 user.Phone = entity.Phone;
@@ -182,6 +183,15 @@ namespace Model.Dao
         public bool CheckPhone(string phone)
         {
             return db.Users.Count(u => u.Phone == phone) > 0;
+        }
+
+        /*-------------- Thay đổi trạng thái --------------------*/
+        public bool ChangeStatus(long id)
+        {
+            var user = db.Users.Find(id);
+            user.Status = !user.Status;
+            db.SaveChanges();
+            return user.Status;
         }
     }
 }

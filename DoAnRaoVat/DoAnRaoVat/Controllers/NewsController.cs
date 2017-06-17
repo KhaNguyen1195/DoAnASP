@@ -36,7 +36,7 @@ namespace DoAnRaoVat.Controllers
             SetViewBagCity();
             return View();
         }
-    
+
         [HttpPost]
         public ActionResult Create(News news)
         {

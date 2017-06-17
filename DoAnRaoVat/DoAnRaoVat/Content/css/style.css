@@ -4,7 +4,6 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
-
 body{
 	padding:0;
 	font-family: 'Open Sans', sans-serif;
@@ -994,7 +993,7 @@ i.real-estate {
 /*-- //focus --*/
 /*-- sign-in --*/
 .sign-in-wrapper{
-	background: url(../images/account-bg.jpg) repeat-y;
+	background: url(../images/account-bg.jpg) no-repeat 0px 0px;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -1058,20 +1057,16 @@ i.real-estate {
 	font-weight:600;
 	letter-spacing:2px;
 }
-
 .agileinfo_signin input[type="submit"]:hover{
 	background:#060e56;
 }
-
 .forgot-grid {
     margin-top: 0em;
 }
-
 .agileinfo_signin label.checkbox {
     float: left;
     margin: 0;
 }
-
 .checkbox {
     position: relative;
     padding-left: 22px !important;
@@ -1082,7 +1077,6 @@ i.real-estate {
     font-weight: 500;
     margin: 0 0 1.5em;
 }
-
 .checkbox input + i:after {
     content: '';
     background: url("../images/tick.png") no-repeat 4px 3px;
@@ -1093,11 +1087,9 @@ i.real-estate {
     font: normal 12px/16px FontAwesome;
     text-align: center;
 }
-
 .forgot {
     float: right;
 }
-
 .forgot a {
     font-size: 1em;
     color: #353F49;
@@ -4116,10 +4108,6 @@ section.list-right span.price:after {
 }
 /*-- //Feedback-page --*/
 
-
-
-
-
 /*-- Privacy-page --*/
 .privacy.main-grid-border {
     padding-bottom: 50px;
@@ -4173,7 +4161,7 @@ ul.privacy-start {
     padding: 40px;
     margin-bottom: 60px;
 }
-.post-ad-form form label {
+.post-ad-form .form-label {
     font-size: 15px;
     text-transform: capitalize;
     margin-bottom: 8px;
@@ -4222,7 +4210,7 @@ ul.privacy-start {
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
-.post-ad-form form select {
+.post-ad-form .form-select {
     border: 1px solid #ff4c4c;
     background-color: #fff;
     padding: 8px;
@@ -4777,7 +4765,7 @@ label {
 	span.adprice {
 		font-size: 20px;
 	}
-	.ads-list select {
+	.ads-list .form-select {
 		width: 85%;
 	}
 	#custom-search-input {
@@ -4805,7 +4793,7 @@ label {
 	.work-section-grid h4 {
 		font-size: 23px;
 	}
-	.post-ad-form form label {
+	.post-ad-form .form-label {
 		width: 20%;
 		margin-right: 3%;
 	}
@@ -5137,7 +5125,7 @@ label {
 	.post-ad-form {
 		padding: 35px 20px;
 	}
-	.post-ad-form form label {
+	.post-ad-form .form-label {
 		width: 22%;
 	}
 	p.post-terms {
@@ -5443,7 +5431,7 @@ label {
 	.w3-footer-logo a:before, .w3-footer-logo a:after {
 		width: 35%;
 	}
-	.post-ad-form form label {
+	.post-ad-form .form-label {
 		width: 26%;
 	}
 	.agileinfo_signin {
@@ -5545,10 +5533,10 @@ label {
 	h2.w3-head {
 		font-size: 30px;
 	}
-	.post-ad-form form label {
+	.post-ad-form .form-label {
 		font-size: 13px;
 	}
-	.post-ad-form form label {
+	.post-ad-form .form-label {
 		width: 23%;
 	}	
 	p.post-terms {
@@ -6064,7 +6052,7 @@ label {
 	.region-block {
 		padding: 25px 0px;
 	}
-	.post-ad-form form label {
+	.post-ad-form .form-label {
 		width: 100%;
 		display: block;
 		text-align: left;

@@ -22,6 +22,8 @@ namespace Model.EF
         [StringLength(250)]
         public string Name { get; set; }
 
+        public bool Status { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<User> Users { get; set; }
 

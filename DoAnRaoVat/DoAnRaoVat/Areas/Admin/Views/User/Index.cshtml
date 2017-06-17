@@ -53,9 +53,10 @@
                                     <th class="kc">#</th>
                                     <th class="kc">Tên tài khoản</th>
                                     <th class="kc">Họ và tên</th>
-                                    <th class="kc">Địa chỉ</th>
                                     <th class="kc">Email</th>
                                     <th class="kc">Số điện thoại</th>
+                                    <th class="kc">Chức vụ</th>
+                                    <th class="kc">Trạng thái</th>
                                     <th class="kc" style="min-width:50px;">Hành động</th>
                                 </tr>
                             </thead>
@@ -66,9 +67,12 @@
                                         <td class="kc">@(stt++)</td>
                                         <td class="kc">@item.Username</td>
                                         <td class="kc">@item.Name</td>
-                                        <td class="kc">@item.Address</td>
                                         <td class="kc">@item.Email</td>
                                         <td class="kc">@item.Phone</td>
+                                        <td class="kc">@item.UserGroup.Name</td>
+                                        <td class="kc">
+                                            <a href="#" class="btn-active" data-id="@item.ID">@Html.Raw(item.Status ? "<strong>Kích hoạt</strong>" : "Khoá")</a>
+                                        </td>
                                         <td>
                                             <div class="kc">
                                                 <a href="@Url.Action("Edit","User", new {@ID=@item.ID })" class="btn btn-info btn-sm tooltips"

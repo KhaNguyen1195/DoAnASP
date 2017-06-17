@@ -62,7 +62,10 @@
     <Compile Include="Dao\CityDao.cs" />
     <Compile Include="Dao\FeedBackDao.cs" />
     <Compile Include="Dao\CategoryDao.cs" />
+    <Compile Include="Dao\NewsDao.cs" />
+    <Compile Include="Dao\ProductDao.cs" />
     <Compile Include="Dao\UserDao.cs" />
+    <Compile Include="Dao\UserGroupDao.cs" />
     <Compile Include="EF\Category.cs" />
     <Compile Include="EF\City.cs" />
     <Compile Include="EF\DoAnASPDBContext.cs" />
