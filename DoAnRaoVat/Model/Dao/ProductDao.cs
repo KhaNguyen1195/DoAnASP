@@ -75,5 +75,10 @@ namespace Model.Dao
             db.SaveChanges();
             return true;
         }
+
+        public List<Product> LissAllProduct()
+        {
+            return db.Products.Where(x => x.Status == true).ToList();
+        }
     }
 }

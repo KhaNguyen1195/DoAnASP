@@ -1,0 +1,87 @@
+﻿@model Model.EF.News
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Create", "News", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    if (ViewBag.Success != null)
+    {
+        <div class="alert alert-info">@ViewBag.Success</div>
+    }
+
+
+
+ <!-- Submit Ad -->
+<div class="submit-ad main-grid-border">
+    <div class="container">
+        <h2 class="w3-head">Post an Ad</h2>
+        <div class="post-ad-form">
+            <form>
+
+                @Html.LabelFor(model => model.ProductID, new {})
+                @Html.DropDownListFor(model => model.ProductID, null, new { @placeholder="Loại sản phẩm" })
+                @Html.ValidationMessageFor(model => model.ProductID, "", new { @class = "text-danger" })
+
+                <div class="clearfix"></div>
+                @Html.LabelFor(model => model.CityID, new { })
+                @Html.DropDownListFor(model => model.CityID, null, new { @placeholder = "Chọn khu vực" })
+                @Html.ValidationMessageFor(model => model.CityID, "", new { @class = "text-danger" })
+
+                <div class="clearfix"></div>
+                @Html.LabelFor(model => model.Name)
+                @Html.TextBoxFor(model => model.Name, new {  @placeholder = "Tiêu đề"  })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+
+                <div class="clearfix"></div>
+                @Html.LabelFor(model => model.Description)
+                @Html.TextAreaFor(model => model.Description,  new { @placeholder = "Mô tả sản phẩm"  })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+
+                <div class="clearfix"></div>
+                @Html.LabelFor(model => model.Price)
+                @Html.TextBoxFor(model => model.Price,  new { @placeholder = "Giá"  })
+                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+
+                @*<div class="clearfix"></div>
+                <div class="upload-ad-photos">
+                    <label>Photos for your ad :</label>
+                    <div class="photos-upload-view">
+                        <form id="upload" action="index.html" method="POST" enctype="multipart/form-data">
+
+                            <input type="hidden" id="MAX_FILE_SIZE" name="MAX_FILE_SIZE" value="300000" />
+
+                            <div>
+                                <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" />
+                                <div id="filedrag">or drop files here</div>
+                            </div>
+
+                            <div id="submitbutton">
+                                <button type="submit">Upload Files</button>
+                            </div>
+
+                        </form>
+
+                        <div id="messages">
+                            <p>Status Messages</p>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <script src="js/filedrag.js"></script>
+                </div>*@
+                <div class="personal-details">
+                    <form>
+                        <input type="submit" value="Post">
+                        <div class="clearfix"></div>
+                    </form>
+                </div>
+        </div>
+    </div>
+</div>
+<!-- // Submit Ad -->
+}
