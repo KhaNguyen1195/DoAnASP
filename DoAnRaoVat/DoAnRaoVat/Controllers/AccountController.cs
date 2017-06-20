@@ -61,6 +61,7 @@ namespace DoAnRaoVat.Controllers
                     {
                         ViewBag.Success = "Đăng ký thành công";
                         model = new RegisterModels();
+                        ModelState.Clear();
 
                     }
                     else
@@ -69,7 +70,6 @@ namespace DoAnRaoVat.Controllers
                     }
                 }
             }
-            ModelState.Clear();
             return View(model);
         }
         /*------------ Đăng ký -----------------*/

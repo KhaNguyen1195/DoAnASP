@@ -1,0 +1,100 @@
+﻿@model PagedList.IPagedList<Model.EF.News>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    int stt = 1;
+}
+
+<section id="main-content">
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <ol class="breadcrumb">
+                    <li><i class="fa fa-home"></i><a href="@Url.Action("Index","News")"> Trang chủ</a></li>
+                    <li><i class="fa fa-book"></i>Quản lý bài đăng</li>
+                    <li>Danh sách bài đăng</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <div class="col-sm-4">
+                            <h3><strong>Danh sách bài đăng</strong></h3>
+                        </div>
+                        <!--Tìm kiếm--->
+                        <div class="col-sm-offset-5 col-sm-3">
+                            <form class="form-group" role="form">
+                                @using (Html.BeginForm("Index", "News", FormMethod.Get))
+                                {
+                                    <div class="input-group">
+                                        <input type="text" class="form-control input-sm" placeholder="Tìm kiếm..." value="@ViewBag.SearchString" name="searchString">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-flat btn-sm" type="submit" name="search">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                }
+                            </form>
+                        </div>
+                        <!--Tìm kiếm --->
+                        @*<div class="button-ds">
+                                <a class="btn btn-primary btn-sm" href="@Url.Action("Create","News")">Thêm mới</a>
+                            </div>*@
+                    </header>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead style="font-size:18px;">
+                                <tr>
+                                    <th class="kc">STT</th>
+                                    <th class="kc">Tiêu đề</th>
+                                    <th class="kc">Mô tả</th>
+                                    <th class="kc">Hình ảnh</th>
+                                    <th class="kc">Giá</th>
+                                    <th class="kc">Loại sản phẩm</th>
+                                    <th class="kc">Khu vực</th>
+                                    <th class="kc" style="min-width:50px;">Hành động</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr id="row_@item.ID">
+                                        <td class="kc">@(stt++)</td>
+                                        <td class="kc">@item.Name</td>
+                                        <td class="kc">@item.Description</td>
+                                        <td class="kc">@item.Image</td>
+                                        <td class="kc">@item.Price</td>
+                                        <td class="kc">@item.Product.Name</td>
+                                        <td class="kc">@item.City.Name</td>
+                                        <td>
+                                                <div class="kc">
+                                                    @*<a href="@Url.Action("Edit","News", new {@ID=@item.ID })" class="btn btn-info btn-sm tooltips"
+                                                       data-placement="top" data-toggle="tooltip" data-original-title="Chỉnh sửa">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </a>*@
+                                                    <a href="@Url.Action("Delete","News", new {@ID=@item.ID })" onclick="return confirm('Bạn chắc chắn muốn xóa?')"
+                                                       class="btn btn-danger btn-sm tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Xóa">
+                                                        <i class="fa fa-trash-o"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <div class="text-center">
+                            <ul class="pagination">
+                                @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @searchString = @ViewBag.SearchString }))
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</section>
+

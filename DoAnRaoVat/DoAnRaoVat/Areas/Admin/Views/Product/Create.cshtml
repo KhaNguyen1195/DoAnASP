@@ -45,7 +45,7 @@
                                 <div class="form-group col-lg-6">
                                     @Html.LabelFor(model => model.Category_ID, new { @class = "control-label col-lg-4" })
                                     <div class="col-lg-8">
-                                        @Html.DropDownListFor(model => model.Category_ID, null, new { @class = "form-control", @autofocus = "autofocus" })
+                                        @Html.DropDownListFor(model => model.Category_ID, null, "Chọn danh mục", new { @class = "form-control" })
                                         @Html.ValidationMessageFor(model => model.Category_ID, "", new { @class = "text-danger" })
                                     </div>
                                 </div>

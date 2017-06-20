@@ -1,0 +1,11 @@
+﻿@model List<Model.EF.Category>
+<div class="agileits-tab_nav">
+    <ul class="resp-tabs-list hor_1">
+        @foreach (var item in Model)
+        {
+            <li><a href="/san-pham/@item.ID">@item.Name</a></li>
+        }
+        
+    </ul>
+</div>
+

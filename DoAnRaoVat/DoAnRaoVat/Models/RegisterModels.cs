@@ -7,6 +7,7 @@ using System.Web;
 
 namespace DoAnRaoVat.Models
 {
+
     [MetadataType(typeof(RegisterValidation))]
     public class RegisterModels
     {

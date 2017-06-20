@@ -1,0 +1,13 @@
+﻿@model List<Model.EF.Category>
+<div class="menu-wrap">
+    <nav class="menu">
+        <div class="icon-list">
+            @foreach (var item in Model)
+            {
+                <a href="mobiles.html"><span>@item.Name</span></a>
+            }
+
+        </div>
+        <button class="close-button" id="close-button">Close Menu</button>
+    </nav>
+</div>

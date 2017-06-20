@@ -51,7 +51,7 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
                 }
             }
             SetViewBag();
-            return View("Index");
+            return View("Create");
         }
 
         [HttpGet]
@@ -80,7 +80,7 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
                 }
             }
             SetViewBag(product.Category_ID);
-            return View("Index");
+            return View("Edit");
         }
 
         public ActionResult Delete(int id)

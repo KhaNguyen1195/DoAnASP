@@ -76,5 +76,10 @@ namespace Model.Dao
             db.SaveChanges();
             return true;
         }
+
+        public News ViewDetail(long id)
+        {
+            return db.News.Find(id);
+        }
     }
 }
