@@ -5,6 +5,7 @@ namespace Model.EF
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web;
 
     public partial class News
     {
@@ -19,7 +20,26 @@ namespace Model.EF
         [StringLength(250)]
         public string Description { get; set; }
 
-        [StringLength(250)]
+        [NotMapped]
+        public string FirstImage
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(Image))
+                {
+                    string[] ars = Image.Split(';');
+                    foreach (var item in ars)
+                    {
+                        if (!string.IsNullOrEmpty(item.Trim()))
+                        {
+                            return item;
+                        }
+                    }
+                }
+                return null;
+            }
+        }
+
         public string Image { get; set; }
 
         public decimal? Price { get; set; }
@@ -35,12 +55,16 @@ namespace Model.EF
 
         public DateTime? ModifiedDate { get; set; }
 
-        public bool? Status { get; set; }
+        public bool Status { get; set; }
 
         public int? ViewCount { get; set; }
 
         public virtual City City { get; set; }
 
         public virtual Product Product { get; set; }
+
+        [Required(ErrorMessage = "Please select file.")]
+        [Display(Name = "Browse File")]
+        public HttpPostedFileBase[] files { get; set; }
     }
 }

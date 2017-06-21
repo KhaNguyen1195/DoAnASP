@@ -2,14 +2,15 @@ ul.resp-tabs-list, p {
     margin: 0px;
     padding: 0px;
 }
-
-.resp-tabs-list li {
+.resp-tabs-list li{
+	list-style: none;
+}
+.resp-tabs-list li a{
     font-weight: 400;
     font-size: 17px;
     display: inline-block;
     padding: 13px 15px;
     margin: 0 4px 0 0;
-    list-style: none;
     cursor: pointer;
     float: left;
 	font-family: 'Ubuntu Condensed', sans-serif;
@@ -96,7 +97,7 @@ a.w3ls-ads {
 a.w3ls-ads:hover {
 	color:#ff4c4c;
 }
-.resp-vtabs .resp-tabs-list li {
+.resp-vtabs .resp-tabs-list li a{
     display: block;
     padding: 15px 15px !important;
     margin: 0 0 4px;

@@ -51,6 +51,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,6 +69,7 @@
     <Compile Include="Dao\UserGroupDao.cs" />
     <Compile Include="EF\Category.cs" />
     <Compile Include="EF\City.cs" />
+    <Compile Include="EF\Credential.cs" />
     <Compile Include="EF\DoAnASPDBContext.cs" />
     <Compile Include="EF\FeedBack.cs" />
     <Compile Include="EF\News.cs" />
@@ -79,6 +81,7 @@
     <Compile Include="Validation\CategoryMetaData.cs" />
     <Compile Include="Validation\CityMetaData.cs" />
     <Compile Include="Validation\FeedBackMetaData.cs" />
+    <Compile Include="Validation\ProductMetaData.cs" />
     <Compile Include="Validation\UserMetaData.cs" />
   </ItemGroup>
   <ItemGroup>

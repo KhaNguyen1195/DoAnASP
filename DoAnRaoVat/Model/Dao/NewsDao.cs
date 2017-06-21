@@ -53,7 +53,7 @@ namespace Model.Dao
                 news.Price = entity.Price;
                 news.ProductID = entity.ProductID;
                 news.CityID = entity.CityID;
-                //product.ModifiedDate = (DateTime.Now);
+                news.ModifiedDate = (DateTime.Now);
                 news.Status = entity.Status;
                 db.SaveChanges();
                 return true;

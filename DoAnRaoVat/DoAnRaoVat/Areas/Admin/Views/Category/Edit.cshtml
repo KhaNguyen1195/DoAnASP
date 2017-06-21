@@ -32,7 +32,7 @@
                                 <div class="form-group col-lg-6">
                                     @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-4" })
                                     <div class="col-md-8">
-                                        @Html.TextBoxFor(model => model.Code, new { @class = "form-control", @autofocus = "autofocus", @placeholder = "TMã danh mục" })
+                                        @Html.TextBoxFor(model => model.Code, new { @class = "form-control", @autofocus = "autofocus"})
                                         @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -40,7 +40,7 @@
                                 <div class="form-group col-lg-6">
                                     @Html.LabelFor(model => model.Name, new { @class = "control-label col-lg-4" })
                                     <div class="col-lg-8">
-                                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @autofocus = "autofocus", @placeholder = "Tên danh mục" })
+                                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @autofocus = "autofocus"})
                                         @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                                     </div>
                                 </div>

@@ -46,8 +46,7 @@ namespace DoAnRaoVat.Controllers
         {
             if (ModelState.IsValid)
             {
-
-                string imageUrl = "";
+                
                 string image = "";
                 foreach (HttpPostedFileBase file in files)
                 {
@@ -56,10 +55,9 @@ namespace DoAnRaoVat.Controllers
                     {
                         try
                         {
-                            image += imageUrl + ";";
-                            imageUrl = Path.GetFileName(file.FileName);
-                            string path = Path.Combine(Server.MapPath("~/App_Data/Uploads"), imageUrl);
+                            string path = Path.Combine(Server.MapPath("~/Uploads/"), Path.GetFileName(file.FileName));
                             file.SaveAs(path);
+                            image += file.FileName + "; ";
                             ViewBag.Message = files.Count().ToString() + " Tệp tải thành công!!";
                         }
                         catch (Exception ex)
@@ -103,7 +101,7 @@ namespace DoAnRaoVat.Controllers
             var news = new NewsDao().ViewDetail(id);
             SetViewBagProduct(news.ProductID);
             SetViewBagCity(news.CityID);
-            return View();
+            return View(news);
         }
 
         [HttpPost]
@@ -111,9 +109,7 @@ namespace DoAnRaoVat.Controllers
         {
             if (ModelState.IsValid)
             {
-
                 var dao = new NewsDao();
-                news.ModifiedDate = DateTime.Now;
                 var result = dao.Update(news);
                 if (result)
                 {
@@ -129,25 +125,18 @@ namespace DoAnRaoVat.Controllers
             return View("Edit");
         }
 
-        [ChildActionOnly]
-        public PartialViewResult Category()
-        {
-            var model = new CategoryDao().LissAll();
-            return PartialView(model);
-        }
-
-        [ChildActionOnly]
-        public PartialViewResult CategoryMenu()
-        {
-            var model = new CategoryDao().LissAll();
-            return PartialView(model);
-        }
-
         public ActionResult Detail(long id)
         {
             var news = new NewsDao().ViewDetail(id);
             ViewBag.Product = new CategoryDao().ViewDetail(news.ProductID.Value);
             return View();
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var dao = new NewsDao();
+            dao.Delete(id);
+            return RedirectToAction("Index");
         }
 
     }

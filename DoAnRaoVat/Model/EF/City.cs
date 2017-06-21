@@ -19,10 +19,10 @@ namespace Model.EF
 
         public long ID { get; set; }
 
-        
+        [StringLength(50)]
         public string Code { get; set; }
 
-        
+        [StringLength(50)]
         public string Name { get; set; }
 
         public bool Status { get; set; }
