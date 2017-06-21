@@ -93,6 +93,7 @@
     </script>
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ek+Mukta" />
     <link href="~/Content/css/menulogin.css" rel="stylesheet" />
+
 </head>
 <body>
     <!-- Navigation -->
@@ -118,8 +119,6 @@
             <!--header-one-->
             <div class="w3ls-header-right">
                 <nav class="menu">
-
-
                     <ul>
                         <li class="dropdown head-dpdn">
                             <a href="@Url.Action("Register", "Account")"><i class="fa fa-user" aria-hidden="true"></i> Đăng ký</a>
@@ -130,7 +129,6 @@
                         @if (session != null)
                         {
                             <li class="dropdown head-dpdn">
-
                                 <a><span class="glyphicon glyphicon-user"></span> @session.UserName <span class="arrow">&#9660;</span></a>
                                 <ul class="sub-menu">
                                     <li><a href="#">Thông tin cá nhân</a></li>
