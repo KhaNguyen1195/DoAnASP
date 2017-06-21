@@ -331,6 +331,7 @@
     <Content Include="Content\css\jquery.uls.grid.css" />
     <Content Include="Content\css\jquery.uls.lcd.css" />
     <Content Include="Content\css\login.css" />
+    <Content Include="Content\css\menulogin.css" />
     <Content Include="Content\css\menu_sideslide.css" />
     <Content Include="Content\css\register.css" />
     <Content Include="Content\css\style.css" />
