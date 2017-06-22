@@ -152,7 +152,7 @@
                                 @foreach (var item in Model)
                                 {
                                     <ul class="list" id="row_@item.ID">
-                                        <a href="single.html">
+                                        <a href="@Url.Action("Detail","CategoryNews", new {@ID=@item.ID})">
                                             <li>
                                                 <img src="~/Uploads/@item.FirstImage" title="" alt="" />
                                                 <section class="list-left">

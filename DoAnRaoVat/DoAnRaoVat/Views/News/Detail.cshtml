@@ -1,0 +1,26 @@
+﻿@model Model.EF.News
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="grid_3 grid_5">
+    <h3 class="head-top">Badges</h3>
+    <div class="but_list">
+        <div class="col-md-12 page_1">
+            <p>Add modifier classes to change the appearance of a badge.</p>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Focused Input</label>
+                    <div class="col-sm-8">
+                        <span>@Model.Name</span>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="clearfix"> </div>
+    </div>
+</div>
+

@@ -1,4 +1,5 @@
 ﻿using Model.Dao;
+using Model.EF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,14 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
             return View(model);
         }
 
-        
+
+        public ActionResult Detail(long id)
+        {
+            var news = new NewsDao().ViewDetail(id);
+            ViewBag.Product = new CategoryDao().ViewDetail(news.ProductID.Value);
+            return View(news);
+        }
+
+
     }
 }

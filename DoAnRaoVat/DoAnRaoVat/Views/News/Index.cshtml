@@ -7,7 +7,6 @@
 }
 
 
-
 <div class="grid_3 grid_5">
     <h3 class="head-top">Danh sách các bài đăng của bạn</h3>
     <div class="but_list">
@@ -17,11 +16,11 @@
                     <tr>
                         <th>STT</th>
                         <th>Tiêu đề</th>
-                        <th>Mô tả</th>
                         <th>Hình ảnh</th>
                         <th>Giá</th>
                         <th>Danh mục</th>
                         <th>Khu vực</th>
+                        <th>Ngày đăng</th>
                         <th style="min-width:50px;">Hành động</th>
                     </tr>
                 </thead>
@@ -31,14 +30,14 @@
                         <tr id="row_@item.ID">
                             <td>@(stt++)</td>
                             <td>@item.Name</td>
-                            <td>@item.Description</td>
                             <td><img style="width:100px;height:100px;" src="~/Uploads/@item.FirstImage"></td>
                             <td>@item.Price</td>
                             <td>@item.Product.Name</td>
                             <td>@item.City.Name</td>
+                            <td>@item.CreatedDate</td>
                             <td>
                                 <div>
-                                    <a href="@Url.Action("Edit","News", new {@ID=@item.ID })" class="btn btn-info btn-sm"><i class="fa fa-pencil"></i></a>
+                                    <a href="@Url.Action("Detail","News", new {@ID=@item.ID })" class="btn btn-default btn-sm"><i class="fa fa-file"></i></a>
                                     <a href="@Url.Action("Delete","News", new {@ID=@item.ID })" onclick="return confirm('Bạn chắc chắn muốn xóa?')"
                                        class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></a>
                                 </div>

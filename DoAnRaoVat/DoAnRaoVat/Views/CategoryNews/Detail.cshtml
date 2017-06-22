@@ -6,17 +6,12 @@
     var product = (Model.EF.Category)ViewBag.Product;
 }
 
-
-
-
-
-
 <!-- breadcrumbs -->
 <div class="w3layouts-breadcrumbs text-center">
     <div class="container">
         <span class="agile-breadcrumbs">
             <a href="index.html"><i class="fa fa-home home_1"></i></a> /
-            <a href="/san-pham/@product.ID">@product.Name</a> /
+            <a href="">@product.Name</a> /
             @*<span>@product.Name</span>*@
         </span>
     </div>
@@ -27,15 +22,17 @@
     <div class="container">
         <div class="product-desc">
             <div class="col-md-7 product-view">
-                <h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h2>
-                <p> <i class="glyphicon glyphicon-map-marker"></i><a href="#">@Model.City.Name</a>| Added at @Model.CreatedDate, Ad ID: 987654321</p>
                 <div class="flexslider">
-                    <ul class="slides">
-                        <li data-thumb="@Model.Image">
-                            <img src="~/Uploads/@Model.FirstImage" />
-                        </li>
-                    </ul>
+                    <img src="~/Uploads/@Model.FirstImage" />
+                    @*<ul class="slides">
+                <li data-thumb="">
+
+                </li>
+            </ul>*@
                 </div>
+                @*<h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h2>*@
+                <p><i class="glyphicon glyphicon-map-marker">@Model.City.Name</i><a href="#"></a>| Ngày đăng: @Model.CreatedDate</p>
+               
                 <!-- FlexSlider -->
                 <script defer src="js/jquery.flexslider.js"></script>
 
@@ -50,10 +47,8 @@
                 </script>
                 <!-- //FlexSlider -->
                 <div class="product-details">
-                    <h4><span class="w3layouts-agileinfo">Tiêu đề </span> : <a href="#">@Model.Name</a><div class="clearfix"></div></h4>
-                    @*<h4><span class="w3layouts-agileinfo">Views </span> : <strong>150</strong></h4>
-                        <h4><span class="w3layouts-agileinfo">Fuel </span> : Petrol</h4>*@
-                    <h4><span class="w3layouts-agileinfo">Mô tả</span> :<p>@Model.Description</p><div class="clearfix"></div></h4>
+                    <h4><span class="w3layouts-agileinfo">Tiêu đề </span> : <a href="#">@Model.Name</a></h4><div class="clearfix"></div>
+                    <h4><span class="w3layouts-agileinfo">Mô tả</span> :<p>@Model.Description</p></h4><div class="clearfix"></div>
 
                 </div>
             </div>
@@ -64,33 +59,28 @@
                         <h3 class="rate">@Model.Price</h3>
                         <div class="clearfix"></div>
                     </div>
-                    @*<div class="condition">
+                    <div class="condition">
                             <p class="p-price">Condition</p>
-                            <h4>Good</h4>
+                            <h4>@Model.User.Name</h4>
                             <div class="clearfix"></div>
-                        </div>*@
+                        </div>
                     <div class="itemtype">
                         <p class="p-price">Item Type</p>
-                        <h4>@product.Name</h4>
+                        <h5>@Model.Product.Name</h5>
                         <div class="clearfix"></div>
                     </div>
                 </div>
                 <div class="interested text-center">
-                    <h4>Interested in this Ad?<small> Contact the Seller!</small></h4>
-                    <p><i class="glyphicon glyphicon-earphone"></i>00-85-9875462655</p>
+                    <h4>Quan tâm đến Quảng cáo này?<small> Liên hệ với Người bán!</small></h4>
+                    <p><i class="glyphicon glyphicon-earphone"></i>@Model.User.Phone</p>
                 </div>
                 <div class="tips">
-                    <h4>Safety Tips for Buyers</h4>
+                    <h4>Mua hàng an toàn</h4>
                     <ol>
-                        <li><a href="#">Contrary to popular belief.</a></li>
-                        <li><a href="#">Contrary to popular belief.</a></li>
-                        <li><a href="#">Contrary to popular belief.</a></li>
-                        <li><a href="#">Contrary to popular belief.</a></li>
-                        <li><a href="#">Contrary to popular belief.</a></li>
-                        <li><a href="#">Contrary to popular belief.</a></li>
-                        <li><a href="#">Contrary to popular belief.</a></li>
-                        <li><a href="#">Contrary to popular belief.</a></li>
-                        <li><a href="#">Contrary to popular belief.</a></li>
+                        <li><span>Không trả tiền trước khi mua hàng</span></li>
+                        <li><span>Kiểm tra hàng cẩn thận, đặc biệt với hàng đắt tiền</span></li>
+                        <li><span>Hẹn gặp ở nơi công cộng</span></a></li>
+                        <li><span>Nếu bạn mua hàng hiệu, hãy gặp tại cửa hàng để nhờ xác định, tránh mua phải hàng giả</span></li>
                     </ol>
                 </div>
             </div>

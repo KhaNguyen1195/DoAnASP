@@ -50,7 +50,7 @@ namespace DoAnRaoVat.Controllers
         {
             var news = new NewsDao().ViewDetail(id);
             ViewBag.Product = new CategoryDao().ViewDetail(news.ProductID.Value);
-            return View();
+            return View(news);
         }
     }
 }

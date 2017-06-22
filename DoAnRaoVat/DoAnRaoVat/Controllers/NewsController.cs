@@ -1,4 +1,5 @@
-﻿using DoAnRaoVat.Models;
+﻿using DoAnRaoVat.Common;
+using DoAnRaoVat.Models;
 using Model.Dao;
 using Model.EF;
 using System;
@@ -104,6 +105,7 @@ namespace DoAnRaoVat.Controllers
             return View(news);
         }
 
+
         [HttpPost]
         public ActionResult Edit(News news)
         {
@@ -117,13 +119,17 @@ namespace DoAnRaoVat.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Chỉnh sửa bài đăng không thành công");
+                    ModelState.AddModelError("", "Cập nhật bài đăng không thành công");
                 }
             }
             SetViewBagProduct(news.ProductID);
             SetViewBagCity(news.CityID);
             return View("Edit");
         }
+
+
+
+
 
         public ActionResult Detail(long id)
         {
@@ -139,5 +145,7 @@ namespace DoAnRaoVat.Controllers
             return RedirectToAction("Index");
         }
 
+
+        
     }
 }
