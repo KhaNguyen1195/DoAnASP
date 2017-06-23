@@ -73,9 +73,14 @@ namespace DoAnRaoVat.Controllers
                     }
                 }
 
-
+                
                 var dao = new NewsDao();
                 news.CreatedDate = DateTime.Now;
+                var session = (UserLogin)Session[DoAnRaoVat.Common.CommonConstants.USER_SESSION];
+                if (session != null)
+                {
+                    news.UserID = session.UserID;
+                }
                 news.Status = true;
                 news.Image = image;
                 long id = dao.Insert(news);

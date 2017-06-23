@@ -8,7 +8,7 @@
 
     @foreach (var item in Model)
     {
-        <h4 class="agileits-sear-head"><a href="/san-pham/@item.ID">@item.Name</a></h4>
+        <h4 class="agileits-sear-head"><a href="@Url.Action("Index","CategoryNews", new {@ID=@item.ID })">@item.Name</a></h4>
     }
 
 

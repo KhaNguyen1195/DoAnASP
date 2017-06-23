@@ -43,5 +43,7 @@ namespace Model.Validation
         [Display(Name = "Trạng thái")]
         //[Required(ErrorMessage = "Yêu cầu nhập Số điện thoại")]
         public bool Status { get; set; }
+        [Display(Name = "Nhóm người dùng")]
+        public string UserGroupID { get; set; }
     }
 }

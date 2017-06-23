@@ -56,7 +56,6 @@
                         <div>
                             @Html.TextBoxFor(model => model.files, new { @type = "file", @multiple = "multiple", @id = "fileselect" })
                             @Html.ValidationMessageFor(model => model.files, "", new { @class = "text-danger" })
-                            @*<input type="file" id="fileselect" name="files" multiple="multiple" />*@
                             <div id="filedrag">Hoặc kéo thả các file vào đây</div>
                         </div>
 
