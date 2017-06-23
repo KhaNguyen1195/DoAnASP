@@ -79,6 +79,15 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        
+        /*-------------- Thay đổi trạng thái--------------------*/
+        [HttpPost]
+        public JsonResult ChangeStatus(long id)
+        {
+            var result = new CategoryDao().ChangeStatus(id);
+            return Json(new
+            {
+                status = result
+            });
+        }
     }
 }

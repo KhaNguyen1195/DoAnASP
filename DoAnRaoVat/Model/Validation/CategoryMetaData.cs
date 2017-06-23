@@ -12,12 +12,12 @@ namespace Model.Validation
         [Key]
         public long ID { get; set; }
 
-        [Required(ErrorMessage = "Yêu cầu nhập Mã danh mục")]
-        [Display(Name = "Mã danh mục")]
+        [Required(ErrorMessage = "Yêu cầu nhập Mã loại danh mục")]
+        [Display(Name = "Mã loại danh mục")]
         public string Code { get; set; }
 
-        [Required(ErrorMessage = "Yêu cầu nhập Tên danh mục")]
-        [Display(Name = "Tên danh mục")]
+        [Required(ErrorMessage = "Yêu cầu nhập Tên loại danh mục")]
+        [Display(Name = "Tên loại danh mục")]
         public string Name { get; set; }
 
 

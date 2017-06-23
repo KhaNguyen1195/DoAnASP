@@ -77,7 +77,16 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
-        DoAnASPDBContext db = new DoAnASPDBContext();
+        /*-------------- Thay đổi trạng thái--------------------*/
+        [HttpPost]
+        public JsonResult ChangeStatus(long id)
+        {
+            var result = new CityDao().ChangeStatus(id);
+            return Json(new
+            {
+                status = result
+            });
+        }
 
     }
 }

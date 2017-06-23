@@ -13,18 +13,18 @@ namespace Model.Validation
         [Key]
         public long ID { get; set; }
 
-        [Display(Name="Mã loại danh mục")]
-        [Required(ErrorMessage = "Yêu cầu nhập Mã loại danh mục")]
+        [Display(Name="Mã danh mục")]
+        [Required(ErrorMessage = "Yêu cầu nhập Mã danh mục")]
         public string Code { get; set; }
 
-        [Display(Name = "Mã loại danh mục")]
-        [Required(ErrorMessage = "Yêu cầu nhập Tên loại danh mục")]
+        [Display(Name = "Mã danh mục")]
+        [Required(ErrorMessage = "Yêu cầu nhập Tên danh mục")]
         public string Name { get; set; }
 
         [Display(Name = "Trạng thái")]
         public bool Status { get; set; }
 
-        [Display(Name = "Danh mục")]
+        [Display(Name = "Loại danh mục")]
         //[Required(ErrorMessage = "Yêu cầu chọn Danh mục")]
         public long? Category_ID { get; set; }
 

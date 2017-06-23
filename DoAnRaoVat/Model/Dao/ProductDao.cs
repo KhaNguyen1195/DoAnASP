@@ -80,5 +80,14 @@ namespace Model.Dao
         {
             return db.Products.Where(x => x.Status == true).ToList();
         }
+
+        /*-------------- Thay đổi trạng thái --------------------*/
+        public bool ChangeStatus(long id)
+        {
+            var product = db.Products.Find(id);
+            product.Status = !product.Status;
+            db.SaveChanges();
+            return product.Status;
+        }
     }
 }

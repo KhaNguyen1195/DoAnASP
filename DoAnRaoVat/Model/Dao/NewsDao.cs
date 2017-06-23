@@ -53,7 +53,7 @@ namespace Model.Dao
                 news.Price = entity.Price;
                 news.ProductID = entity.ProductID;
                 news.CityID = entity.CityID;
-                news.ModifiedDate = (DateTime.Now);
+                //news.ModifiedDate = (DateTime.Now);
                 news.Status = entity.Status;
                 db.SaveChanges();
                 return true;
@@ -80,6 +80,15 @@ namespace Model.Dao
         public News ViewDetail(long id)
         {
             return db.News.Find(id);
+        }
+
+        /*-------------- Thay đổi trạng thái --------------------*/
+        public bool ChangeStatus(long id)
+        {
+            var user = db.Users.Find(id);
+            user.Status = !user.Status;
+            db.SaveChanges();
+            return user.Status;
         }
     }
 }

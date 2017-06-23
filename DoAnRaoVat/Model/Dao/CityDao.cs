@@ -78,5 +78,14 @@ namespace Model.Dao
             return db.Cities.Where(x => x.Status == true).ToList();
         }
 
+
+        /*-------------- Thay đổi trạng thái --------------------*/
+        public bool ChangeStatus(long id)
+        {
+            var city = db.Cities.Find(id);
+            city.Status = !city.Status;
+            db.SaveChanges();
+            return city.Status;
+        }
     }
 }

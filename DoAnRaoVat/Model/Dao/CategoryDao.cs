@@ -84,5 +84,14 @@ namespace Model.Dao
         {
             return db.Categories.Find(id);
         }
+
+        /*-------------- Thay đổi trạng thái --------------------*/
+        public bool ChangeStatus(long id)
+        {
+            var category = db.Categories.Find(id);
+            category.Status = !category.Status;
+            db.SaveChanges();
+            return category.Status;
+        }
     }
 }

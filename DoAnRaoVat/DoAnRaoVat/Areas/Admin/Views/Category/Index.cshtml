@@ -12,8 +12,8 @@
             <div class="col-lg-12">
                 <ol class="breadcrumb">
                     <li><i class="fa fa-home"></i><a href="@Url.Action("Index","Home")">Trang chủ</a></li>
-                    <li><i class="fa fa-folder"></i>Quản lý danh mục</li>
-                    <li>Danh sách danh mục</li>
+                    <li><i class="fa fa-folder"></i>Quản lý loại danh mục</li>
+                    <li>Danh sách loại danh mục</li>
                 </ol>
             </div>
         </div>
@@ -22,7 +22,7 @@
                 <section class="panel">
                     <header class="panel-heading">
                         <div class="col-sm-4">
-                            <h3><strong>Danh sách danh mục</strong></h3>
+                            <h3><strong>Danh sách loại danh mục</strong></h3>
                         </div>
                         <!--Tìm kiếm--->
                         <div class="col-sm-offset-3 col-sm-3">
@@ -50,8 +50,9 @@
                             <thead style="font-size:18px;">
                                 <tr>
                                     <th class="kc">STT</th>
-                                    <th class="kc">Mã danh mục</th>
-                                    <th class="kc">Tên danh mục</th>
+                                    <th class="kc">Mã loại danh mục</th>
+                                    <th class="kc">Tên loại danh mục</th>
+                                    <th class="kc">Trạng thái</th>
                                     <th class="kc" style="min-width:50px;">Hành động</th>
                                 </tr>
                             </thead>
@@ -62,6 +63,9 @@
                                         <td class="kc">@(stt++)</td>
                                         <td class="kc">@item.Code</td>
                                         <td class="kc">@item.Name</td>
+                                        <td class="kc">
+                                            <a href="#" class="btn-active" data-id="@item.ID">@Html.Raw(item.Status ? "<strong>Hiển thị</strong>" : "Ẩn")</a>
+                                        </td>
                                         <td>
                                             <div class="kc">
                                                 <a href="@Url.Action("Edit","Category", new {@ID=@item.ID })" class="btn btn-info btn-sm tooltips"

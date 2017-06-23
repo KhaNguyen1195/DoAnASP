@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace DoAnRaoVat.Areas.Admin.Controllers
 {
-    public class NewsController : Controller
+    public class NewsController : BaseController
     {
         // GET: Admin/News
         public ActionResult Index(string searchString, int page = 1, int pageSize = 5)
@@ -27,6 +27,42 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
             return View(news);
         }
 
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var news = new NewsDao().ViewDetail(id);
+            return View(news);
+        }
 
+
+        [HttpPost]
+        public ActionResult Edit(News news)
+        {
+            if (ModelState.IsValid)
+            {
+                var dao = new NewsDao();
+                var result = dao.Update(news);
+                if (result)
+                {
+                    return RedirectToAction("Index", "News");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Cập nhật danh mục không thành công");
+                }
+            }
+            return View("Edit");
+        }
+
+        /*-------------- Thay đổi trạng thái--------------------*/
+        [HttpPost]
+        public JsonResult ChangeStatus(long id)
+        {
+            var result = new NewsDao().ChangeStatus(id);
+            return Json(new
+            {
+                status = result
+            });
+        }
     }
 }

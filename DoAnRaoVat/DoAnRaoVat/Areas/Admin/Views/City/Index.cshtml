@@ -54,6 +54,7 @@
                                     <th class="kc">STT</th>
                                     <th class="kc">Mã khu vực</th>
                                     <th class="kc">Tên khu vực</th>
+                                    <th class="kc">Trạng thái</th>
                                     <th class="kc" style="min-width:50px;">Hành động</th>
                                 </tr>
                             </thead>
@@ -64,6 +65,9 @@
                                         <td class="kc">@(stt++)</td>
                                         <td class="kc">@item.Code</td>
                                         <td class="kc">@item.Name</td>
+                                        <td class="kc">
+                                            <a href="#" class="btn-active" data-id="@item.ID">@Html.Raw(item.Status ? "<strong>Hiển thị</strong>" : "Ẩn")</a>
+                                        </td>
                                         <td>
                                             <div class="kc">
                                                 <a href="@Url.Action("Edit","City", new {@ID=@item.ID })" class="btn btn-info btn-sm tooltips"

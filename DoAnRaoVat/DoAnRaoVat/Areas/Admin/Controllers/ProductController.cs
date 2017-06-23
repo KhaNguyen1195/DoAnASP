@@ -89,5 +89,16 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
             dao.Delete(id);
             return RedirectToAction("Index");
         }
+
+        /*-------------- Thay đổi trạng thái--------------------*/
+        [HttpPost]
+        public JsonResult ChangeStatus(long id)
+        {
+            var result = new ProductDao().ChangeStatus(id);
+            return Json(new
+            {
+                status = result
+            });
+        }
     }
 }
