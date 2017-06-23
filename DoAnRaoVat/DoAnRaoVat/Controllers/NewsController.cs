@@ -127,15 +127,12 @@ namespace DoAnRaoVat.Controllers
             return View("Edit");
         }
 
-
-
-
-
+        
         public ActionResult Detail(long id)
         {
             var news = new NewsDao().ViewDetail(id);
             ViewBag.Product = new CategoryDao().ViewDetail(news.ProductID.Value);
-            return View();
+            return View(news);
         }
 
         public ActionResult Delete(int id)

@@ -2,19 +2,13 @@
 
 <link href="~/Content/css/easy-responsive-tabs.css" rel="stylesheet" />
 <script src="~/Content/js/easyResponsiveTabs.js"></script>
+<link href="~/Content/css/menulogin.css" rel="stylesheet" />
 
 
-<div class="category-list">
-    <div id="parentVerticalTab">
-        <div class="agileits-tab_nav">
-            <ul class="resp-tabs-list hor_1">
-                @foreach (var item in Model)
-                {
-                    <li><a href="/san-pham/@item.ID">@item.Name</a></li>
-                }
-            </ul>
-        </div>
-    </div>
 
-</div>
+    @foreach (var item in Model)
+    {
+        <h4 class="agileits-sear-head"><a href="/san-pham/@item.ID">@item.Name</a></h4>
+    }
+
 

@@ -99,14 +99,6 @@
     <!-- Navigation -->
     <div class="agiletopbar">
         <div class="wthreenavigation">
-            @*<div class="menu-wrap">
-                    <nav class="menu">
-                        <div class="icon-list">
-
-                        </div>
-                    </nav>
-                    <button class="close-button" id="close-button">Close Menu</button>
-                </div>*@
             @{ Html.RenderAction("CategoryMenu", "CategoryNews");}
             <button class="menu-button" id="open-button"> </button>
         </div>
@@ -133,7 +125,6 @@
                                 <ul class="sub-menu">
                                     <li><a href="#">Thông tin cá nhân</a></li>
                                     <li><a href="@Url.Action("Index","News")">Danh sách các bài đăng</a></li>
-                                    <li><a href="#">On DVD/Blu-ray</a></li>
                                     <li>@Html.ActionLink("Thoát", "Logout", "Account")</li>
                                 </ul>
                             </li>

@@ -26,7 +26,7 @@
     background: #3e3436;
 }
 
-/*-- single-page --*/
+/*-- single-page 
 .single-page {
 	padding:50px 0;
 }
@@ -193,3 +193,13 @@ h3.rate {
     line-height: 30px;
 }
 /*-- //single-page --*/
+
+h4.agileits-sear-head {
+    color: rgba(255, 76, 76, 0.86);
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 15px 0 15px;
+    border-bottom: 1px solid #e5e3db;
+
+}

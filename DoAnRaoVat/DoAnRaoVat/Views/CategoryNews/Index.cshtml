@@ -5,7 +5,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     //var listNewProducts = (List<Model.EF.News>)ViewBag.NewNews;
     //int stt = 1;
-
+    <link href="~/Content/css/easy-responsive-tabs.css" rel="stylesheet" />
+    <script src="~/Content/js/easyResponsiveTabs.js"></script>
 
 }
 
@@ -102,27 +103,14 @@
 
         <div class="side-bar col-md-3">
             <div class="search-hotel">
-                <h3 class="agileits-sear-head">Name contains</h3>
+                <h3 class="agileits-sear-head">Nhập vào thông tin tìm kiếm</h3>
                 <form>
                     <input type="text" value="Product name..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Product name...';}" required="">
                     <input type="submit" value=" ">
                 </form>
             </div>
-            <div class="w3ls-featured-ads">
-                <h2 class="sear-head fer">@{ Html.RenderAction("Category", "CategoryNews");}</h2>
-                @*<div class="w3l-featured-ad">
-                        <a href="single.html">
-                            <div class="w3-featured-ad-left">
-                                <img src="images/f1.jpg" title="ad image" alt="" />
-                            </div>
-                            <div class="w3-featured-ad-right">
-                                <h4>Lorem Ipsum is simply dummy text of the printing industry</h4>
-                                <p>$ 450</p>
-                            </div>
-                            <div class="clearfix"></div>
-                        </a>
-                    </div>*@
-                <div class="clearfix"></div>
+            <div class="menu">
+                @{ Html.RenderAction("Category", "CategoryNews");}
             </div>
         </div>
 
