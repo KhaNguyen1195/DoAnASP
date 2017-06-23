@@ -76,6 +76,15 @@ namespace DoAnRaoVat.Areas.Admin.Controllers
             return RedirectToAction("Index");
         }
 
+
+        public ActionResult Detail(long id)
+        {
+            var feedback = new FeedBackDao().ViewDetail(id);
+            return View(feedback);
+        }
+
         DoAnASPDBContext db = new DoAnASPDBContext();
+
+
     }
 }

@@ -38,7 +38,7 @@ namespace Model.Dao
             IQueryable<News> model = db.News;
             if (!string.IsNullOrEmpty(searchString))
             {
-                model = model.Where(x => x.Name.Contains(searchString));
+                model = model.Where(x => x.Name.Contains(searchString) || x.City.Name.Contains(searchString) || x.Product.Name.Contains(searchString) );
             }
             return model.OrderByDescending(x => x.CreatedDate).ToPagedList(page, pageSize);
         }

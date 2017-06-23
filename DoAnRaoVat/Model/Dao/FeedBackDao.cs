@@ -75,5 +75,10 @@ namespace Model.Dao
             db.SaveChanges();
             return true;
         }
+
+        public FeedBack ViewDetail(long id)
+        {
+            return db.FeedBacks.Find(id);
+        }
     }
 }

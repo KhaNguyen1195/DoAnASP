@@ -78,6 +78,10 @@
                                                    data-placement="top" data-toggle="tooltip" data-original-title="Chỉnh sửa">
                                                     <i class="fa fa-pencil"></i>
                                                 </a>
+                                                <a href="@Url.Action("Detail","FeedBack", new {@ID=@item.ID })" class="btn btn-default btn-sm tooltips"
+                                                   data-placement="top" data-toggle="tooltip" data-original-title="Chi tiết">
+                                                    <i class="fa fa-file"></i>
+                                                </a>
                                                 <a href="@Url.Action("Delete","FeedBack", new {@ID=@item.ID })" onclick="return confirm('Bạn chắc chắn muốn xóa?')"
                                                    class="btn btn-danger btn-sm tooltips" data-placement="top" data-toggle="tooltip" data-original-title="Xóa">
                                                     <i class="fa fa-trash-o"></i>
